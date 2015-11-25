@@ -45,8 +45,8 @@
 	<!--<gap:plugin source="npm" name="org.apache.cordova.file" />-->
 	<!--<gap:plugin source="npm" name="org.apache.cordova.file-transfer" />-->
 	<gap:plugin source="npm" name="org.apache.cordova.inappbrowser" />
-	<gap:plugin source="npm" name="org.apache.cordova.media" />
-	<gap:plugin source="npm" name="org.apache.cordova.media-capture" />
+	<!--<gap:plugin source="npm" name="org.apache.cordova.media" />-->
+	<!--<gap:plugin source="npm" name="org.apache.cordova.media-capture" />-->
 	<gap:plugin source="npm" name="org.apache.cordova.network-information" />
 	
 	<!-- https://github.com/apache/cordova-plugin-globalization -->
