@@ -26,10 +26,19 @@ Viewport Sized Typography
     width: 100%;
   }
 
+  /* ***** */
+
   label {
     font-size: 3vmax;
     width:     100%;
   }
+
+  label:focus {
+    font-size: 3vmax;
+    width:     100%;
+  }
+
+  /* ***** */
 
   input[type=text] {
     border-radius: 5px;
@@ -45,6 +54,7 @@ Viewport Sized Typography
   }
 
   input[type=button] {
-    width: 60%;
+    font-size: 3vmax;
+    width:     60%;
   }
 }
