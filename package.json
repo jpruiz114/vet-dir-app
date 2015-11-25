@@ -1,0 +1,30 @@
+{
+  "name": "VetDir",
+  "version": "1.0.0",
+  "description": "VetDir PhoneGap Android App",
+  "main": "index.js",
+  "dependencies": {
+    "grunt-jsonlint": "^1.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jpruiz114/vet-dir-app.git"
+  },
+  "author": "Jean Paul Ruiz <jpruiz114@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpruiz114/vet-dir-app/issues"
+  },
+  "homepage": "https://github.com/jpruiz114/vet-dir-app",
+  "devDependencies": {
+    "grunt-contrib-csslint": "^0.5.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-html-validation": "^0.1.18",
+    "grunt-jsvalidate": "*",
+    "grunt-xml-validator": "^1.1.2",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}

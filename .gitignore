@@ -1,0 +1,15 @@
+# Exclude any PSD/AI source
+*.psd
+*.ai
+
+# Exclude grunt files
+#package.json
+#Gruntfile.js
+
+node_modules
+
+# IDEA config files
+.idea/
+
+# All the sass cache files
+.sass-cache

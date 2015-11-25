@@ -1,0 +1,49 @@
+/* Styles for the html tags */
+@import "html-tags";
+
+/* Styles for the spinner */
+@import "_spinner";
+
+/* Styles for the splash screen */
+@import "views/splash-screen";
+
+/* Styles for the welcome screen */
+@import "views/welcome";
+
+/* Styles for the settings view */
+@import "views/settings";
+
+/* Generic styles to be copied for every new view */
+@import "views/view-name";
+
+.view {
+	display: none;
+	height:  100%;
+	width:   100%;
+}
+
+.active {
+	display: block;
+}
+
+/* ***** */
+
+.top-bar {
+	float: left;
+	width: 100%;
+}
+
+.title-full-width {
+	background:     rgba(0, 0, 0, 0.9);
+	float:          left;
+	height:         100%;
+	padding-bottom: 20px;
+	padding-top:    20px;
+	text-align:     center;
+	width:          100%;
+}
+
+.title-full-width label {
+	color:     white;
+	font-size: 42px;
+}

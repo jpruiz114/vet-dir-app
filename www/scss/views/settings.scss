@@ -1,0 +1,48 @@
+/*
+https://css-tricks.com/viewport-sized-typography/
+Viewport Sized Typography
+1vw = 1% of viewport width
+1vh = 1% of viewport height
+1vmin = 1vw or 1vh, whichever is smaller
+1vmax = 1vw or 1vh, whichever is larger
+*/
+
+#settings {
+  background-image:  url("../img/dog_and_cat_seamless_pattern-oppacity.png");
+  background-repeat: repeat;
+}
+
+#settings-nav {
+  float:         left;
+  margin-bottom: 0px;
+  margin-left:   40px;
+  margin-right:  40px;
+  margin-top:    0px;
+  overflow-y:    hidden;
+  width:         calc(100% - 80px);
+
+  .full-width-row {
+    float: left;
+    width: 100%;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  input[type=text] {
+    border-radius: 5px;
+    border-style:  solid;
+    border-width:  1px;
+    font-size:     2vmin;
+    width:         calc(100% - 2px);
+  }
+
+  .centered {
+    text-align: center;
+  }
+
+  input[type=button] {
+    width: 60%;
+  }
+}

@@ -1,0 +1,98 @@
+#welcome {
+  background-image:  url("../img/dog_and_cat_seamless_pattern-oppacity.png");
+  background-repeat: repeat;
+}
+
+#welcome-nav {
+  float:         left;
+  margin-bottom: 0px;
+  margin-left:   40px;
+  margin-right:  40px;
+  margin-top:    0px;
+  overflow-y:    hidden;
+  width:         calc(100% - 80px);
+}
+
+/* ***** */
+
+#welcome-nav .venue-intro {
+  background:    rgba(240, 146, 18, 0.9);
+  display:       table;
+  float:         left;
+  height:        calc(200px - 80px);
+  margin-bottom: 40px;
+  padding:       40px;
+  width:         calc(100% - 80px);
+}
+
+.icon-container {
+  display:        table-cell;
+  text-align:     left;
+  vertical-align: middle;
+  width:          20%;
+}
+
+.icon-container i {
+  color:     white;
+  font-size: 5em;
+}
+
+.with-icon .venue-type-content {
+  width: 80%;
+}
+
+/* ***** */
+
+#welcome-nav .venue-type {
+  background:    rgba(56, 192, 238, 0.9);
+  float:         left;
+  height:        calc(200px - 80px);
+  margin-bottom: 40px;
+  width:         calc(100% - 80px);
+  padding:       40px;
+  display:       table;
+}
+
+#welcome-nav .venue-type-content {
+  display:        table-cell;
+  vertical-align: middle;
+}
+
+#welcome-nav .venue-type-content label {
+  display: block;
+}
+
+#welcome-nav .venue-type-content .venue-type-title {
+  color:       white;
+  font-size:   36px;
+  font-weight: bold;
+}
+
+#welcome-nav .venue-type-content .venue-type-desc{
+  color:       white;
+  font-size:   26px;
+  font-weight: lighter;
+}
+
+/* ***** */
+
+#welcome-nav .venue-option {
+  background:    rgba(190, 190, 190, 0.9);
+  float:         left;
+  height:        calc(120px - 80px);
+  margin-bottom: 40px;
+  width:         calc(100% - 80px);
+  padding:       40px;
+  display:       table;
+}
+
+#welcome-nav .venue-option-content {
+  display:        table-cell;
+  vertical-align: middle;
+}
+
+#welcome-nav .venue-option-content .venue-option-title {
+  color:       white;
+  font-size:   36px;
+  font-weight: bold;
+}

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		
+		<meta name="format-detection" content="telephone=no" />
+		
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+
+		<title>VetDir</title>
+	</head>
+	
+	<body>
+		<div class="view active" id="splash-screen">
+			<div id="splash-screen-logo-container">
+				<img alt="" src="img/logo.png" width="300" height="300" />
+				
+				<div class="spinner">
+					<div class="bounce1"></div>
+					<div class="bounce2"></div>
+					<div class="bounce3"></div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ***** -->
+		
+		<div class="view" id="welcome" data-view-fixed="0">
+			<div class="top-bar">
+				<div class="title-full-width">
+					<label data-i18n="welcome-nav.title"></label>
+				</div>
+			</div>
+			
+			<div id="welcome-nav">
+				<div class="venue-intro with-icon" onclick="addNewVenue();">
+					<div class="icon-container">
+						<i class="fa fa-plus-circle"></i>
+					</div>
+					
+					<div class="venue-type-content">
+						<label class="venue-type-title" data-i18n="welcome-nav.intro-text"></label>
+						
+						<label class="venue-type-desc" data-i18n="welcome-nav.intro-text-desc"></label>
+					</div>
+				</div>
+				
+				<div class="venue-type with-icon" onclick="findVeterinarian();">
+					<div class="icon-container">
+						<i class="fa fa-check-circle"></i>
+					</div>
+					
+					<div class="venue-type-content">
+						<label class="venue-type-title" data-i18n="welcome-nav.veterinarian"></label>
+						
+						<label class="venue-type-desc" data-i18n="welcome-nav.veterinarian-desc"></label>
+					</div>
+				</div>
+				
+				<div class="venue-type with-icon" onclick="findPetService();">
+					<div class="icon-container">
+						<i class="fa fa-check-circle"></i>
+					</div>
+					
+					<div class="venue-type-content">
+						<label class="venue-type-title" data-i18n="welcome-nav.pet-service"></label>
+						
+						<label class="venue-type-desc" data-i18n="welcome-nav.pet-service-desc"></label>
+					</div>
+				</div>
+				
+				<div class="venue-type with-icon" onclick="findPetStore();">
+					<div class="icon-container">
+						<i class="fa fa-check-circle"></i>
+					</div>
+					
+					<div class="venue-type-content">
+						<label class="venue-type-title" data-i18n="welcome-nav.pet-store"></label>
+						
+						<label class="venue-type-desc" data-i18n="welcome-nav.pet-store-desc"></label>
+					</div>
+				</div>
+				
+				<div class="venue-option with-icon" onclick="goToSettings();">
+					<div class="icon-container">
+						<i class="fa fa-wrench"></i>
+					</div>
+					
+					<div class="venue-option-content">
+						<label class="venue-option-title" data-i18n="welcome-nav.settings"></label>
+					</div>
+				</div>
+				
+				<div class="venue-option with-icon" onclick="goToJoinLogin();">
+					<div class="icon-container">
+						<i class="fa fa-sign-in"></i>
+					</div>
+					
+					<div class="venue-option-content">
+						<label class="venue-option-title" data-i18n="welcome-nav.join-login"></label>
+					</div>
+				</div>
+				
+				<div class="venue-option with-icon" onclick="goToContact();">
+					<div class="icon-container">
+						<i class="fa fa-envelope-o"></i>
+					</div>
+					
+					<div class="venue-option-content">
+						<label class="venue-option-title" data-i18n="welcome-nav.contact"></label>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- ***** -->
+
+		<div class="view" id="settings" data-view-fixed="0">
+			<div class="top-bar">
+				<div class="title-full-width">
+					<label data-i18n="settings.title"></label>
+				</div>
+			</div>
+
+			<div id="settings-nav">
+				<div class="full-width-row">
+					<label data-i18n="settings.search-radius"></label>
+				</div>
+
+				<div class="full-width-row">
+					<input id="settings-pre-ser-val" type="text" />
+				</div>
+
+				<div class="full-width-row centered">
+					<input id="save-settings" onclick="" type="button" data-i18n="[value]settings.save" />
+				</div>
+			</div>
+		</div>
+
+		<!-- ***** -->
+
+		<div class="view" id="view-name" data-view-fixed="0">
+			<div class="top-bar">
+				<div class="title-full-width">
+					<label data-i18n="view-name.title"></label>
+				</div>
+			</div>
+
+			<div id="view-name-nav">
+
+			</div>
+		</div>
+
+		<!-- ***** -->
+
+		<script type="text/javascript" src="cordova.js"></script>
+		
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		
+		<!-- http://i18next.com/ -->
+		<!-- http://i18next.com/pages/doc_init.html -->
+		<script type="text/javascript" src="js/i18next-1.11.0.min.js"></script>
+		
+		<script type="text/javascript" src="js/index.js"></script>
+		
+		<script type="text/javascript">
+			/**
+			 * When all the website resources (Images, scripts) have been loaded.
+			 */
+			$(window).load(
+				function() {
+					$("#splash-screen").css("opacity", 1);
+					
+					app.initialize();
+				}
+			);
+
+			/**
+			 *
+			 */
+			function addNewVenue() {
+				app.addNewVenue();
+			}
+
+			/**
+			 *
+			 */
+			function findVeterinarian() {
+				app.findVeterinarian();
+			}
+
+			/**
+			 *
+			 */
+			function findPetService() {
+				app.findPetService();
+			}
+
+			/**
+			 *
+			 */
+			function findPetStore() {
+				app.findPetStore();
+			}
+
+			/**
+			 *
+			 */
+			function goToSettings() {
+				app.goToSettings();
+			}
+
+			/**
+			 *
+			 */
+			function goToJoinLogin() {
+				app.showAlert("goToJoinLogin", null, "info", "ok");
+			}
+
+			/**
+			 *
+			 */
+			function goToContact() {
+				app.showAlert("goToContact", null, "info", "ok");
+			}
+		</script>
+	</body>
+</html>

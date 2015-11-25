@@ -1,0 +1,12 @@
+{
+	"config": {
+		"api_base_path": "http://jeanpaulruizvallejo.com/proyectos/vetdir/api/"
+	},
+	"foursquare": {
+		"categories": {
+			"pet_service_category_id": "5032897c91d4c4b30a586d69",
+			"pet_store_category_id": "4bf58dd8d48988d100951735",
+			"veterinarian_category_id": "4d954af4a243a5684765b473"
+		}
+	}
+}

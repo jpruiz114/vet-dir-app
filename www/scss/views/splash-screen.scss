@@ -1,0 +1,12 @@
+#splash-screen {
+  background-image:  url("../img/dog_and_cat_seamless_pattern-oppacity.png");
+  background-repeat: repeat;
+  display:           table;
+  opacity:           0;
+}
+
+#splash-screen-logo-container {
+  display:        table-cell;
+  vertical-align: middle;
+  text-align:     center;
+}

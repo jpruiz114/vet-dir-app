@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget
+	id="com.phonegap.vetdir"
+	version="1.0.0"
+	xmlns="http://www.w3.org/ns/widgets"
+	xmlns:gap="http://phonegap.com/ns/1.0"
+>
+	<!-- Check config.xml options here: http://docs.phonegap.com/en/edge/config_ref_index.md.html -->
+	
+	<!-- Define the app name -->
+	<name>VetDir</name>
+	
+	<!-- Define the app description -->
+	<description>VetDir Mobile App</description>
+	
+	<!-- Define the app author -->
+	<author email="jpruiz114@gmail.com" href="http://www.jeanpaulruizvallejo.com/">Jean Paul Ruiz</author>
+	
+	<!-- Define the file with the html content -->
+	<content src="index.html" />
+	
+	<!-- Define the app orientation -->
+	<preference name="orientation" value="portrait" />
+	
+	<!-- Define if the app is full screen or not -->
+	<preference name="fullscreen" value="false" />
+	
+	<preference name="permissions" value="none" />
+	<preference name="target-device" value="universal" />
+	<preference name="webviewbounce" value="true" />
+	<preference name="prerendered-icon" value="true" />
+	<preference name="stay-in-webview" value="false" />
+	<preference name="detect-data-types" value="true" />
+	<preference name="exit-on-suspend" value="false" />
+	<preference name="disable-cursor" value="false" />
+	<preference name="android-minSdkVersion" value="14" />
+	<preference name="android-installLocation" value="auto" />
+	
+	<gap:plugin source="npm" name="org.apache.cordova.battery-status" />
+	<gap:plugin source="npm" name="org.apache.cordova.camera" />
+	<gap:plugin source="npm" name="org.apache.cordova.console" />
+	<gap:plugin source="npm" name="org.apache.cordova.contacts" />
+	<gap:plugin source="npm" name="org.apache.cordova.device-motion" />
+	<gap:plugin source="npm" name="org.apache.cordova.device-orientation" />
+	<gap:plugin source="npm" name="org.apache.cordova.file" />
+	<gap:plugin source="npm" name="org.apache.cordova.file-transfer" />
+	<gap:plugin source="npm" name="org.apache.cordova.inappbrowser" />
+	<gap:plugin source="npm" name="org.apache.cordova.media" />
+	<gap:plugin source="npm" name="org.apache.cordova.media-capture" />
+	<gap:plugin source="npm" name="org.apache.cordova.network-information" />
+	
+	<!-- https://github.com/apache/cordova-plugin-globalization -->
+	<gap:plugin source="npm" name="org.apache.cordova.globalization" />
+	
+	<!-- http://docs.phonegap.com/en/edge/cordova_globalization_globalization.md.html -->
+	<feature name="Globalization">
+		<param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+	</feature>
+	
+	<!-- https://github.com/apache/cordova-plugin-dialogs -->
+	<gap:plugin source="npm" name="org.apache.cordova.dialogs" />
+	
+	<!-- https://github.com/apache/cordova-plugin-vibration -->
+	<gap:plugin source="npm" name="org.apache.cordova.vibration" />
+	
+	<!-- https://github.com/apache/cordova-plugin-device -->
+	<gap:plugin source="npm" name="org.apache.cordova.device" />
+	
+	<!-- http://docs.phonegap.com/en/edge/cordova_device_device.md.html -->
+	<feature name="Device">
+		<param name="android-package" value="org.apache.cordova.device.Device" />
+	</feature>
+	
+	<!-- https://github.com/apache/cordova-plugin-geolocation -->
+	<gap:plugin source="npm" name="org.apache.cordova.geolocation" />
+	
+	<!-- http://docs.phonegap.com/en/edge/cordova_geolocation_geolocation.md.html -->
+	<feature name="Geolocation">
+		<param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+	</feature>
+	
+	<icon src="icon.png" />
+	
+	<icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
+	<icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
+	<icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
+	<icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
+
+	<gap:plugin source="npm" name="cordova-plugin-whitelist" />
+
+	<!-- Don't block any requests -->
+	<access origin="*" />
+
+	<!-- Allow links to web pages to open in a browser -->
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+
+	<allow-intent href="geo:*" />
+
+	<allow-intent href="mailto:*" />
+
+	<!-- Allow SMS links to open messaging app -->
+	<allow-intent href="sms:*" />
+
+	<!-- Allow tel: links to open the dialer -->
+	<allow-intent href="tel:*" />
+
+	<platform name="android">
+		<allow-intent href="market:*" />
+	</platform>
+</widget>
