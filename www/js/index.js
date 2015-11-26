@@ -816,11 +816,17 @@ var app = {
 
 			// Fix the min height of the settings view.
 
-			var topBarHeight = $("#settings .top-bar").height();
+			var topBarHeight = $("#" + viewName + " " + ".top-bar").height();
 
 			var calculatedHeight = "calc(100% - " + topBarHeight + "px)";
 
 			$("#settings-nav").css("min-height", calculatedHeight);
+
+			// Fix the icons containers to have their height equal to the title.
+
+			var titleHeight = $("#" + viewName + " " + ".title-beside-icons").height();
+
+			$("#" + viewName + " " + ".icon-beside-title").css("height", titleHeight + "px");
 
 			app.setViewAsFixed(viewName);
 		} else {
