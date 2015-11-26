@@ -47,3 +47,32 @@
 	color:     white;
 	font-size: 42px;
 }
+
+/* ***** */
+
+.icon-beside-title {
+  background:     rgba(0, 0, 0, 0.9);
+  float:          left;
+  height:         100%;
+  padding-bottom: 20px;
+  padding-top:    20px;
+  text-align:     center;
+  width:          20%;
+}
+
+.title-beside-icons {
+  background:     rgba(0, 0, 0, 0.9);
+  float:          left;
+  height:         100%;
+  padding-bottom: 20px;
+  padding-top:    20px;
+  text-align:     center;
+  width:          60%;
+}
+
+.title-beside-icons label {
+  color:     white;
+  font-size: 42px;
+}
+
+/* ***** */
