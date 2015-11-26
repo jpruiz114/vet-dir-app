@@ -812,7 +812,17 @@ var app = {
 			var preferredSearchRadius = app.getPreferredSearchRadius();
 
 			// Set the preferred search radius.
-			$("#settings-pre-ser-val").val(preferredSearchRadius);
+			$("#settings-pre-sea-rad").val(preferredSearchRadius);
+
+			/* ***** */
+
+			// Load the preferred unit.
+			var preferredUnit = app.getPreferredUnit();
+
+			// Set the preferred unit.
+			$("#settings-pre-sea-uni").val(preferredUnit);
+
+			/* ***** */
 
 			// Fix the min height of the settings view.
 
