@@ -13,17 +13,18 @@ Viewport Sized Typography
 }
 
 #settings-nav {
-  float:         left;
-  margin-bottom: 0px;
-  margin-left:   40px;
-  margin-right:  40px;
-  margin-top:    0px;
-  overflow-y:    hidden;
-  width:         calc(100% - 80px);
+  background-color: rgba(255, 255, 255, 0.5);
+  float:            left;
+  margin-bottom:    0px;
+  margin-left:      40px;
+  margin-right:     40px;
+  margin-top:       0px;
+  overflow-y:       hidden;
+  width:            calc(100% - 80px);
 
   .full-width-row {
     float:      left;
-    margin-top: 2vw;
+    margin-top: 5vw;
     width:      100%;
   }
 
