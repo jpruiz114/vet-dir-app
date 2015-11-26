@@ -23,9 +23,12 @@ Viewport Sized Typography
   width:            calc(100% - 80px);
 
   .full-width-row {
-    float:      left;
+    float: left;
+    width: 100%;
+  }
+
+  .row-with-top-margin {
     margin-top: 5vw;
-    width:      100%;
   }
 
   label {
