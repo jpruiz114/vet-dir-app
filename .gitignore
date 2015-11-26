@@ -13,3 +13,6 @@ node_modules
 
 # All the sass cache files
 .sass-cache
+
+# Ignore the folder that contains the build of the app
+platforms

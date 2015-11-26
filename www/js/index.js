@@ -592,7 +592,7 @@ var app = {
 												var distance = currentVenue.distance;
 												app.showAlert("distance" +  " = " + distance, null, "info", "ok");
 
-												
+
 											}
 										}
 									}
