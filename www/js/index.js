@@ -820,7 +820,7 @@ var app = {
 
 			var calculatedHeight = "calc(100% - " + topBarHeight + "px)";
 
-			$("#settings-nav").css("", calculatedHeight);
+			$("#settings-nav").css("min-height", calculatedHeight);
 
 			app.setViewAsFixed(viewName);
 		} else {
