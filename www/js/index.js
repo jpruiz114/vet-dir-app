@@ -814,7 +814,15 @@ var app = {
 			// Set the preferred search radius.
 			$("#settings-pre-ser-val").val(preferredSearchRadius);
 
+			// Fix the min height of the settings view.
 
+			var topBarHeight = $("#settings .top-bar").height();
+
+			var calculatedHeight = "calc(100% - " + topBarHeight + "px)";
+
+			$("#settings-nav").css("", calculatedHeight);
+
+			app.setViewAsFixed(viewName);
 		} else {
 			// @todo
 		}
