@@ -824,7 +824,7 @@ var app = {
 
 			// Fix the icons containers to have their height equal to the title.
 
-			var titleHeight = $("#" + viewName + " " + ".title-beside-icons").height();
+			var titleHeight = $("#" + viewName + " " + ".top-bar").height();
 
 			$("#" + viewName + " " + ".icon-beside-title").css("height", titleHeight + "px");
 
