@@ -833,6 +833,8 @@ var app = {
 
 			/* ***** */
 
+			
+
 			app.setViewAsFixed(viewName);
 		} else {
 			// @todo
