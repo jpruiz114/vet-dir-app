@@ -827,7 +827,6 @@ var app = {
 
 			// Load the preferred unit.
 			var preferredUnit = app.getPreferredUnit();
-			alert("preferredUnit" + " = " + preferredUnit);
 
 			// Set the preferred unit.
 			$("#settings-pre-sea-uni").val(preferredUnit);
