@@ -32,8 +32,12 @@
 	  "title": "Settings",
 
 	  "search-radius": "Search Radius",
+	  "search-radius-unit-kilometers": "Kilometers",
+	  "search-radius-unit-miles": "Miles",
 
 	  "preferred-unit": "Preferred Unit",
+
+
 
 	  "save": "Save"
 	}

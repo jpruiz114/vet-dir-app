@@ -409,11 +409,9 @@ var app = {
 			if ($("#" + viewName).length) {
 				setTimeout(
 					function() {
-						//$(".active").hide();
 						$(".active").fadeOut();
 						$(".active").removeClass("active");
-						
-						//$("#" + viewName).show();
+
 						$("#" + viewName).fadeIn();
 						$("#" + viewName).addClass("active");
 
@@ -776,11 +774,14 @@ var app = {
 
 			var cssHeight = "calc(100% - " + topBarHeight + "px)";
 
-			$("#" + viewName + " " + "#welcome-nav").css("height", cssHeight);
+			$("#" + viewName + " " + "#" + viewName + "-nav").css("height", cssHeight);
 
-			$("#" + viewName + " " + "#welcome-nav").css("overflow-y", "scroll");
+			$("#" + viewName + " " + "#" + viewName + "-nav").css("overflow-y", "scroll");
 
-			$("#" + viewName + " " + "#welcome-nav").css("-webkit-overflow-scrolling", "touch");
+			$("#" + viewName + " " + "#" + viewName + "-nav").css("-webkit-overflow-scrolling", "touch");
+
+			// Fix the icons containers to have their height equal to the title.
+			$("#" + viewName + " " + ".icon-beside-title").css("height", topBarHeight + "px");
 
 			app.setViewAsFixed(viewName);
 		} else {
@@ -806,7 +807,7 @@ var app = {
 			// Fix the view header.
 			app.fixViewHeader(viewName);
 
-			// Load the settings values in their fields.
+			/* ***** */
 
 			// Load the preferred search radius.
 			var preferredSearchRadius = app.getPreferredSearchRadius();
@@ -824,17 +825,13 @@ var app = {
 
 			/* ***** */
 
-			// Fix the min height of the settings view.
+			// Set the kilometer search unit.
+			$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
 
-			var topBarHeight = $("#" + viewName + " " + ".top-bar").height();
+			// Set the mile search unit.
+			$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
 
-			var calculatedHeight = "calc(100% - " + topBarHeight + "px)";
-
-			$("#settings-nav").css("min-height", calculatedHeight);
-
-			// Fix the icons containers to have their height equal to the title.
-
-			$("#" + viewName + " " + ".icon-beside-title").css("height", topBarHeight + "px");
+			/* ***** */
 
 			app.setViewAsFixed(viewName);
 		} else {
