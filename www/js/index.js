@@ -833,7 +833,10 @@ var app = {
 
 			/* ***** */
 
+			var preferredLanguage = app.getPreferredLanguage();
+			alert("preferredLanguage" + " = " + preferredLanguage);
 
+			/* ***** */
 
 			app.setViewAsFixed(viewName);
 		} else {
