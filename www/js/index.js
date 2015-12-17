@@ -834,7 +834,9 @@ var app = {
 			/* ***** */
 
 			var preferredLanguage = app.getPreferredLanguage();
-			alert("preferredLanguage" + " = " + preferredLanguage);
+			//alert("preferredLanguage" + " = " + preferredLanguage);
+
+
 
 			/* ***** */
 

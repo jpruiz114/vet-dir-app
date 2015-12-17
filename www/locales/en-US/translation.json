@@ -32,12 +32,13 @@
 	  "title": "Settings",
 
 	  "search-radius": "Search Radius",
-	  "search-radius-unit-kilometers": "Kilometers",
-	  "search-radius-unit-miles": "Miles",
 
 	  "preferred-unit": "Preferred Unit",
 
+	  "search-unit-kilometers": "Kilometers",
+	  "search-unit-miles": "Miles",
 
+	  "preferred-language": "Preferred Language",
 
 	  "save": "Save"
 	}
