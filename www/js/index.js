@@ -817,14 +817,6 @@ var app = {
 
 			/* ***** */
 
-			// Load the preferred unit.
-			var preferredUnit = app.getPreferredUnit();
-
-			// Set the preferred unit.
-			$("#settings-pre-sea-uni").val(preferredUnit);
-
-			/* ***** */
-
 			// Set the kilometer search unit.
 			$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
 
@@ -833,7 +825,16 @@ var app = {
 
 			/* ***** */
 
-			
+			// Load the preferred unit.
+			var preferredUnit = app.getPreferredUnit();
+			alert("preferredUnit" + " = " + preferredUnit);
+
+			// Set the preferred unit.
+			$("#settings-pre-sea-uni").val(preferredUnit);
+
+			/* ***** */
+
+
 
 			app.setViewAsFixed(viewName);
 		} else {
