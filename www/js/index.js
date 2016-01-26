@@ -342,9 +342,9 @@ var app = {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "Info", "ok");
 
-			app.showAlert(app.bcp_47, null, "bcp 47", "ok");
+			app.showAlert(this.bcp_47, null, "bcp 47", "ok");
 
-			if (app.bcp_47) {
+			if (this.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
 				app.showAlert(parseResult, null, "Parse result", "ok");
 
