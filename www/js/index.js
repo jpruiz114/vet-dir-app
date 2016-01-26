@@ -340,12 +340,9 @@ var app = {
 	globalizationGetPreferredLangSuccess: function(language) {
 		if (language) {
 			var languageValue = language.value;
-			app.showAlert("languageValue" + " = " + languageValue, null, "Info", "ok");
-
-			app.showAlert(this.bcp_47, null, "bcp 47", "ok");
 
 			if (this.bcp_47) {
-				var parseResult = app.bcp_47.parse(languageValue);
+				var parseResult = this.bcp_47.parse(languageValue);
 				app.showAlert(parseResult, null, "Parse result", "ok");
 
 				var languageCode = parseResult.langtag.language.language;
