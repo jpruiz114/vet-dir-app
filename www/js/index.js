@@ -319,11 +319,15 @@ var app = {
 	initLangFeature: function() {
 		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
-		app.showAlert(preferredLanguage, null, "Preferred Language", "ok");
+		//app.showAlert(preferredLanguage, null, "Preferred Language", "ok");
 
 		if (preferredLanguage) {
+			app.showAlert("Setting up the preferred language from the local storage", null, "Preferred Language", "ok");
+
 			app.setup_i18n(preferredLanguage);
 		} else {
+			app.showAlert("Finding the local language", null, "Finding language", "ok");
+
 			/**
 			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
 			 * That object should have a value property with a String value.
