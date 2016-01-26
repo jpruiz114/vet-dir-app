@@ -319,7 +319,8 @@ var app = {
 	initLangFeature: function() {
 		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
-
+		app.showAlert(preferredLanguage, null, "Preferred Language", "ok");
+		
 		if (null == preferredLanguage) {
 			/**
 			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
