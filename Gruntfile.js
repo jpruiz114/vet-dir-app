@@ -12,11 +12,13 @@ module.exports = function(grunt) {
 		},
 		jsvalidate: {
 			options:{
-				globals: {}, esprimaOptions: {}, verbose: true
+				globals: {},
+				esprimaOptions: {},
+				verbose: true
 			},
 			targetName:{
 				files:{
-					src:["www/js/index.js"]
+					src:["www/js/index.js", "www/js/modules/*.js"]
 				}
 			}
 		},

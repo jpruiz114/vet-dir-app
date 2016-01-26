@@ -2,7 +2,7 @@ var app = {
 	/**
 	 *
 	 */
-	require: null,
+	bcp_47: null,
 
 	/**
 	 *
@@ -59,10 +59,6 @@ var app = {
 		//var screenH = app.getScreenHeight();
 		//app.showAlert("screenH" +  " = " + screenH, null, "Alert title", "Button label");
 		
-		/* ***** */
-
-		//app.showAlert(app.require, null, "require", "ok");
-
 		/* ***** */
 
 		app.loadConfig();

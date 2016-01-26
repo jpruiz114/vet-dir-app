@@ -194,13 +194,13 @@
 
 		<script type="text/javascript" src="cordova.js"></script>
 
-		<script type="text/javascript" src="js/require.min.js"></script>
-
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
 		<!-- http://i18next.com/pages/doc_init.html -->
 		<script type="text/javascript" src="js/i18next-1.11.0.min.js"></script>
-		
+
+		<script type="text/javascript" src="js/modules/bcp_47.js"></script>
+
 		<script type="text/javascript" src="js/index.js"></script>
 		
 		<script type="text/javascript">
@@ -213,13 +213,9 @@
 
 					/* ***** */
 
-					require.config({
-						baseUrl: "js"
-					});
+					app.bcp_47 = bcp_47;
 
-					app.showAlert(require, null, "require", "ok");
-
-					/*app.require = require;*/
+					app.showAlert(app.bcp_47, null, "bcp 47", "ok");
 
 					/* ***** */
 
