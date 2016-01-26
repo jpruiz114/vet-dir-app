@@ -2,6 +2,11 @@ var app = {
 	/**
 	 *
 	 */
+	require: null,
+
+	/**
+	 *
+	 */
 	initialize: function() {
 		this.bindEvents();
 	},

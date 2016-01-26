@@ -211,10 +211,16 @@
 				function() {
 					$("#splash-screen").css("opacity", 1);
 
+					/* ***** */
+
 					require.config({
 						baseUrl: "js"
 					});
-					
+
+					app.require = require;
+
+					/* ***** */
+
 					app.initialize();
 				}
 			);
