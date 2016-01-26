@@ -342,6 +342,8 @@ var app = {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "Info", "ok");
 
+			app.showAlert(app.bcp_47, null, "bcp 47", "ok");
+
 			if (app.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
 				app.showAlert(parseResult, null, "Parse result", "ok");
@@ -351,7 +353,7 @@ var app = {
 
 				//app.setup_i18n(language.value);
 			} else {
-				app.showAlert("No BCP 47 handler could be found", null, "Error", "ok");
+				// @todo
 			}
 		} else {
 			// @todo
