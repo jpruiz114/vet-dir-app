@@ -338,7 +338,22 @@ var app = {
 	 * @param language
 	 */
 	globalizationGetPreferredLangSuccess: function(language) {
-		app.setup_i18n(language.value);
+		if (language) {
+			var languageValue = language.value;
+
+			if (app.bcp_47) {
+				var parseResult = app.bcp_47.parse(languageValue);
+
+				var languageCode = parseResult.langtag.language.language;
+				app.showAlert(languageCode, null, "Language Code", "ok");
+
+				//app.setup_i18n(language.value);
+			} else {
+				// @todo
+			}
+		} else {
+			// @todo
+		}
 	},
 
 	/**
