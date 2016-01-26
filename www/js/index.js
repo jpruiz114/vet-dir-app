@@ -321,12 +321,8 @@ var app = {
 		var preferredLanguage = app.getPreferredLanguage();
 
 		if (preferredLanguage) {
-			app.showAlert("Setting up the preferred language from the local storage", null, "Preferred language", "ok");
-
 			app.setup_i18n(preferredLanguage);
 		} else {
-			app.showAlert("Finding the local language", null, "Finding language", "ok");
-
 			/**
 			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
 			 * That object should have a value property with a String value.
@@ -342,21 +338,20 @@ var app = {
 	 * @param language
 	 */
 	globalizationGetPreferredLangSuccess: function(language) {
-		app.showAlert(language, null, "Language", "ok");
-
 		if (language) {
 			var languageValue = language.value;
+			app.showAlert("languageValue" + " = " + languageValue, null, "Info", "ok");
 
 			if (app.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
-				app.showAlert(parseResult, null, "Parse Result", "ok");
+				app.showAlert(parseResult, null, "Parse result", "ok");
 
 				var languageCode = parseResult.langtag.language.language;
-				app.showAlert(languageCode, null, "Language Code", "ok");
+				app.showAlert(languageCode, null, "Language code", "ok");
 
 				//app.setup_i18n(language.value);
 			} else {
-				// @todo
+				app.showAlert("No BCP 47 handler could be found", null, "Error", "ok");
 			}
 		} else {
 			// @todo
