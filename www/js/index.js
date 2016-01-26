@@ -61,7 +61,7 @@ var app = {
 		
 		/* ***** */
 
-		app.showAlert(require, null, "require", "ok");
+		app.showAlert(app.require, null, "require", "ok");
 
 		/* ***** */
 
