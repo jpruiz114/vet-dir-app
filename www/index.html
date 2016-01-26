@@ -193,10 +193,11 @@
 		<!-- ***** -->
 
 		<script type="text/javascript" src="cordova.js"></script>
-		
+
+		<script type="text/javascript" src="js/require.min.js"></script>
+
 		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-		
-		<!-- http://i18next.com/ -->
+
 		<!-- http://i18next.com/pages/doc_init.html -->
 		<script type="text/javascript" src="js/i18next-1.11.0.min.js"></script>
 		
@@ -209,6 +210,10 @@
 			$(window).load(
 				function() {
 					$("#splash-screen").css("opacity", 1);
+
+					require.config({
+						baseUrl: "js"
+					});
 					
 					app.initialize();
 				}

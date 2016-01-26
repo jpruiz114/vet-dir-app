@@ -55,7 +55,11 @@ var app = {
 		//app.showAlert("screenH" +  " = " + screenH, null, "Alert title", "Button label");
 		
 		/* ***** */
-		
+
+		app.showAlert(require, null, "require", "ok");
+
+		/* ***** */
+
 		app.loadConfig();
 		
 		/* ***** */
@@ -312,9 +316,16 @@ var app = {
 	 *
 	 */
 	initLangFeature: function() {
+		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
 
 		if (null == preferredLanguage) {
+			/**
+			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
+			 * That object should have a value property with a String value.
+			 * If there is an error getting the language, then the errorCallback executes with a GlobalizationError object as a parameter.
+			 * The error's expected code is GlobalizationError.UNKNOWN_ERROR.
+			 */
 			navigator.globalization.getPreferredLanguage(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
 		} else {
 			app.setup_i18n(preferredLanguage);
