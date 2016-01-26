@@ -320,8 +320,10 @@ var app = {
 		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
 		app.showAlert(preferredLanguage, null, "Preferred Language", "ok");
-		
-		if (null == preferredLanguage) {
+
+		if (preferredLanguage) {
+			app.setup_i18n(preferredLanguage);
+		} else {
 			/**
 			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
 			 * That object should have a value property with a String value.
@@ -329,8 +331,6 @@ var app = {
 			 * The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 			 */
 			navigator.globalization.getPreferredLanguage(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
-		} else {
-			app.setup_i18n(preferredLanguage);
 		}
 	},
 
@@ -339,6 +339,8 @@ var app = {
 	 * @param language
 	 */
 	globalizationGetPreferredLangSuccess: function(language) {
+		app.showAlert(language, null, "Language", "ok");
+
 		if (language) {
 			var languageValue = language.value;
 
