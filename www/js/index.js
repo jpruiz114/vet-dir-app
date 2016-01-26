@@ -343,6 +343,7 @@ var app = {
 
 			if (app.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
+				app.showAlert(parseResult, null, "Parse Result", "ok");
 
 				var languageCode = parseResult.langtag.language.language;
 				app.showAlert(languageCode, null, "Language Code", "ok");
