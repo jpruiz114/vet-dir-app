@@ -22,7 +22,7 @@ var app = {
 	 *
 	 */
 	onDeviceReady: function() {
-		app.changeView("welcome", 5000, app.welcomeCallback);
+		this.changeView("welcome", 5000, app.welcomeCallback);
 		
 		//app.showAlert("This is the message", null, "Alert title", "Button label");
 		//app.playBeep(2);
