@@ -340,10 +340,9 @@ var app = {
 	globalizationGetPreferredLangSuccess: function(language) {
 		if (language) {
 			var languageValue = language.value;
+			app.showAlert(languageValue, null, "languageValue", "ok");
 
-			this.showAlert(this.bcp_47, null, "this.bcp_47", "ok");
-
-			if (this.bcp_47) {
+			/*if (this.bcp_47) {
 				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
 
 				var parseResult = this.bcp_47.parse(languageValue);
@@ -355,7 +354,7 @@ var app = {
 				//app.setup_i18n(language.value);
 			} else {
 				// @todo
-			}
+			}*/
 		} else {
 			// @todo
 		}
