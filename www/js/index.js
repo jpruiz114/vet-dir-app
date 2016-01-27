@@ -319,6 +319,7 @@ var app = {
 	initLangFeature: function() {
 		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
+		app.showAlert(preferredLanguage, null, "preferredLanguage", "ok");
 
 		if (preferredLanguage) {
 			app.setup_i18n(preferredLanguage);
