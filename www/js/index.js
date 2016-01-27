@@ -313,6 +313,8 @@ var app = {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
 
+			console.dir(app.bcp_47);
+
 			/*if (this.bcp_47) {
 				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
 
