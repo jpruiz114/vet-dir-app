@@ -22,3 +22,15 @@ http://xx.xx.xx.xx:pppp/
 
 android avd
 android sdk
+
+## Language
+
+### bcp 47
+
+A bcp 47 validator:
+
+http://schneegans.de/lv/
+
+## For donations
+
+https://supporter.60devs.com/profile

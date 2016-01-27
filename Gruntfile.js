@@ -1,7 +1,16 @@
 module.exports = function(grunt) {
 	require("load-grunt-tasks")(grunt);
-	
+
+	grunt.loadNpmTasks("grunt-contrib-copy");
+
 	grunt.initConfig({
+		copy: {
+			main: {
+				files: [
+					{src: ["www/locales/en/translation.json"], dest: "www/locales/dev/translation.json"}
+				]
+			}
+		},
 		csslint: {
 			validateIndexCSS: {
 				options: {
@@ -47,5 +56,5 @@ module.exports = function(grunt) {
 		}
 	});
 	
-	grunt.registerTask("default", ["csslint", "jsvalidate", "jsonlint", "sass", "xml_validator"]);
+	grunt.registerTask("default", ["copy", "csslint", "jsvalidate", "jsonlint", "sass", "xml_validator"]);
 };
