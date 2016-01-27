@@ -729,6 +729,14 @@ var app = {
 	 *
 	 */
 	initSettings: function() {
+		$("#settings-back-link").click(
+			function() {
+				app.showAlert("settings view back link click", null, "Alert", "ok");
+			}
+		);
+
+		/* ***** */
+
 		var preferredUnit = app.getPreferredUnit();
 
 		if (null == preferredUnit) {
