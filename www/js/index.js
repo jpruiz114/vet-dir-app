@@ -341,7 +341,11 @@ var app = {
 		if (language) {
 			var languageValue = language.value;
 
+			this.showAlert(this.bcp_47, null, "this.bcp_47", "ok");
+
 			if (this.bcp_47) {
+				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
+
 				var parseResult = this.bcp_47.parse(languageValue);
 				app.showAlert(parseResult, null, "Parse result", "ok");
 
