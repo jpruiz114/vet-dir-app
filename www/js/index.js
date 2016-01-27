@@ -24,22 +24,16 @@ var app = {
 	onDeviceReady: function() {
 		app.changeView("welcome", 5000, app.welcomeCallback);
 		
-		/* ***** */
-		
 		// @todo: Set a loop that gets the coordinates every x seconds.
-		
 		navigator.geolocation.getCurrentPosition(app.geolocateSuccess, app.geolocateError);
-		
-		/* ***** */
 
+		// Load the app config.
 		app.loadConfig();
-		
-		/* ***** */
-		
+
+		// Load the language.
 		app.initLangFeature();
 
-		/* ***** */
-
+		// Init the settings view.
 		app.initSettings();
 	},
 	
@@ -103,8 +97,6 @@ var app = {
 		if (null != viewName) {
 			// Fix the view header.
 			app.fixViewHeader(viewName);
-
-
 		} else {
 			// @todo
 		}
@@ -127,22 +119,14 @@ var app = {
 		var api_base_path = json.config.api_base_path;
 		app.setApiBasePath(api_base_path);
 		
-		/* ***** */
-		
 		var pet_service_category_id = json.foursquare.categories.pet_service_category_id;
 		app.setFsPetServiceCategory(pet_service_category_id);
-		
-		/* ***** */
 		
 		var pet_store_category_id = json.foursquare.categories.pet_store_category_id;
 		app.setFsPetStoreCategory(pet_store_category_id);
 		
-		/* ***** */
-		
 		var veterinarian_category_id = json.foursquare.categories.veterinarian_category_id;
 		app.setFsVeterinarianCategory(veterinarian_category_id);
-		
-		/* ***** */
 	},
 	
 	/* ***** */
@@ -294,13 +278,17 @@ var app = {
 		if (preferredLanguage) {
 			app.setup_i18n(preferredLanguage);
 		} else {
-			/**
-			 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
-			 * That object should have a value property with a String value.
-			 * If there is an error getting the language, then the errorCallback executes with a GlobalizationError object as a parameter.
-			 * The error's expected code is GlobalizationError.UNKNOWN_ERROR.
-			 */
-			navigator.globalization.getPreferredLanguage(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
+			if (navigator.globalization !== undefined) {
+				/**
+				 * Returns the BCP-47 compliant language identifier tag to the successCallback with a properties object as a parameter.
+				 * That object should have a value property with a String value.
+				 * If there is an error getting the language, then the errorCallback executes with a GlobalizationError object as a parameter.
+				 * The error's expected code is GlobalizationError.UNKNOWN_ERROR.
+				 */
+				navigator.globalization.getPreferredLanguage(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
+			} else {
+				app.showAlert("navigator.globalization is undefined", null, "Alert", "ok");
+			}
 		}
 	},
 
@@ -312,8 +300,6 @@ var app = {
 		if (language) {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
-
-			console.dir(app.bcp_47);
 
 			/*if (this.bcp_47) {
 				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
@@ -329,7 +315,7 @@ var app = {
 				// @todo
 			}*/
 		} else {
-			// @todo
+			app.showAlert("No language could be found", null, "Alert", "ok");
 		}
 	},
 
