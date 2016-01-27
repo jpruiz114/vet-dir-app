@@ -22,7 +22,7 @@ var app = {
 	 *
 	 */
 	onDeviceReady: function() {
-		this.changeView("welcome", 5000, app.welcomeCallback);
+		app.changeView("welcome", 5000, app.welcomeCallback);
 		
 		//app.showAlert("This is the message", null, "Alert title", "Button label");
 		//app.playBeep(2);
@@ -319,7 +319,6 @@ var app = {
 	initLangFeature: function() {
 		// Get the preferred language from the local storage.
 		var preferredLanguage = app.getPreferredLanguage();
-		app.showAlert(preferredLanguage, null, "preferredLanguage", "ok");
 
 		if (preferredLanguage) {
 			app.setup_i18n(preferredLanguage);
@@ -339,11 +338,8 @@ var app = {
 	 * @param language
 	 */
 	globalizationGetPreferredLangSuccess: function(language) {
-		app.showAlert(language, null, "language", "ok");
-
 		if (language) {
 			var languageValue = language.value;
-			app.showAlert(languageValue, null, "languageValue", "ok");
 
 			/*if (this.bcp_47) {
 				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
