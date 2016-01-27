@@ -13,7 +13,7 @@ var bcp_47 = {
      * @param tag
      */
     parse: function(tag) {
-        var res = regex.exec(tag);
+        var res = bcp_47.regex.exec(tag);
 
         if (!res) return null;
 

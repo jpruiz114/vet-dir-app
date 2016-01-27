@@ -301,19 +301,17 @@ var app = {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
 
-			/*if (this.bcp_47) {
-				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
-
-				var parseResult = this.bcp_47.parse(languageValue);
-				app.showAlert(parseResult, null, "Parse result", "ok");
+			if (app.bcp_47) {
+				var parseResult = app.bcp_47.parse(languageValue);
+				app.showAlert(parseResult, null, "parseResult", "ok");
 
 				var languageCode = parseResult.langtag.language.language;
-				app.showAlert(languageCode, null, "Language code", "ok");
+				app.showAlert(languageCode, null, "languageCode", "ok");
 
 				//app.setup_i18n(language.value);
 			} else {
 				// @todo
-			}*/
+			}
 		} else {
 			app.showAlert("No language could be found", null, "Alert", "ok");
 		}

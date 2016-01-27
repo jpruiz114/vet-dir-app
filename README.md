@@ -17,3 +17,8 @@ Add this to the website:
 
 Check connected instances here:
 http://xx.xx.xx.xx:pppp/
+
+## Android terminal commands
+
+android avd
+android sdk
