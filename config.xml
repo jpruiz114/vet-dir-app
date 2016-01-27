@@ -21,23 +21,13 @@
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
 
-    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
-
-    <gap:plugin name="org.apache.cordova.globalization" source="npm" />
-
-    <feature name="Globalization">
-        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
-    </feature>
-
-    <gap:plugin name="org.apache.cordova.dialogs" source="npm" />
-
-    <gap:plugin name="org.apache.cordova.vibration" source="npm" />
-
     <gap:plugin name="org.apache.cordova.device" source="npm" />
 
     <feature name="Device">
         <param name="android-package" value="org.apache.cordova.device.Device" />
     </feature>
+
+    <gap:plugin name="org.apache.cordova.dialogs" source="npm" />
 
     <gap:plugin name="org.apache.cordova.geolocation" source="npm" />
 
@@ -45,14 +35,24 @@
         <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
     </feature>
 
+    <gap:plugin name="org.apache.cordova.globalization" source="npm" />
+
+    <feature name="Globalization">
+        <param name="android-package" value="org.apache.cordova.globalization.Globalization" />
+    </feature>
+
+    <gap:plugin name="org.apache.cordova.network-information" source="npm" />
+
+    <gap:plugin name="org.apache.cordova.vibration" source="npm" />
+
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+
     <icon src="icon.png" />
 
     <icon gap:platform="android" gap:qualifier="ldpi" src="www/res/icon/android/icon-36-ldpi.png" />
     <icon gap:platform="android" gap:qualifier="mdpi" src="www/res/icon/android/icon-48-mdpi.png" />
     <icon gap:platform="android" gap:qualifier="hdpi" src="www/res/icon/android/icon-72-hdpi.png" />
     <icon gap:platform="android" gap:qualifier="xhdpi" src="www/res/icon/android/icon-96-xhdpi.png" />
-
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
     <access origin="*" />
 
