@@ -299,24 +299,28 @@ var app = {
 	globalizationGetPreferredLangSuccess: function(language) {
 		if (language) {
 			var languageValue = language.value;
-			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
+			//app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
 
 			/**
 			 * If there's a bcp_47 handler.
 			 */
 			if (app.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
-				app.showAlert(parseResult, null, "parseResult", "ok");
+				//app.showAlert(parseResult, null, "parseResult", "ok");
 
 				var languageCode = parseResult.langtag.language.language;
-				app.showAlert(languageCode, null, "languageCode", "ok");
+				//app.showAlert(languageCode, null, "languageCode", "ok");
 
-				//app.setup_i18n(language.value);
+				if (languageCode) {
+					app.setup_i18n(languageCode);
+				} else {
+					app.setup_i18n("en");
+				}
 			} else {
 				// @todo
 			}
 		} else {
-			app.showAlert("No language could be found", null, "Alert", "ok");
+			app.setup_i18n("en");
 		}
 	},
 
@@ -324,7 +328,7 @@ var app = {
 	 *
 	 */
 	globalizationGetPreferredLangError: function() {
-		app.setup_i18n("en-US");
+		app.setup_i18n("en");
 	},
 	
 	/**
@@ -332,7 +336,7 @@ var app = {
 	 */
 	setup_i18n: function(language) {
 		if (null == language) {
-			language = "en-US";
+			language = "en";
 		}
 
 		app.setupPreferredLanguage(language);

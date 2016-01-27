@@ -1,0 +1,45 @@
+{
+	"app": {
+		"name": "VetDir"
+	},
+	"app-messages": {
+		"no-network-connection-msg-title": "No network connection",
+		"no-network-connection-msg-txt": "Mobile data is disabled. Connect to Wi-Fi network instead, or enable mobile data and try again",
+		"no-network-connection-msg-btn": "OK"
+	},
+	"welcome-nav": {
+		"title": "VetDir",
+		
+		"intro-text": "Add new venue",
+		"intro-text-desc": "Tap here to create a new venue",
+		
+		"pet-service": "Pet Service",
+		"pet-service-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"pet-store": "Pet Store",
+		"pet-store-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"veterinarian": "Veterinarian",
+		"veterinarian-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"settings": "Settings",
+		
+		"join-login": "Join | Login",
+		
+		"contact": "Contact"
+	},
+	"settings": {
+	  "title": "Settings",
+
+	  "search-radius": "Search Radius",
+
+	  "preferred-unit": "Preferred Unit",
+
+	  "search-unit-kilometers": "Kilometers",
+	  "search-unit-miles": "Miles",
+
+	  "preferred-language": "Preferred Language",
+
+	  "save": "Save"
+	}
+}
