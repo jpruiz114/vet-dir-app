@@ -338,6 +338,8 @@ var app = {
 	 * @param language
 	 */
 	globalizationGetPreferredLangSuccess: function(language) {
+		app.showAlert(language, null, "language", "ok");
+
 		if (language) {
 			var languageValue = language.value;
 			app.showAlert(languageValue, null, "languageValue", "ok");
