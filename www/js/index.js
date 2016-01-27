@@ -301,6 +301,9 @@ var app = {
 			var languageValue = language.value;
 			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
 
+			/**
+			 * If there's a bcp_47 handler.
+			 */
 			if (app.bcp_47) {
 				var parseResult = app.bcp_47.parse(languageValue);
 				app.showAlert(parseResult, null, "parseResult", "ok");
