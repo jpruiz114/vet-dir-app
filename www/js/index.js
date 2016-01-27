@@ -24,40 +24,11 @@ var app = {
 	onDeviceReady: function() {
 		app.changeView("welcome", 5000, app.welcomeCallback);
 		
-		//app.showAlert("This is the message", null, "Alert title", "Button label");
-		//app.playBeep(2);
-		//app.vibrate(1000);
-		
 		/* ***** */
 		
-		//var deviceCordova = device.cordova;
-		//app.showAlert("deviceCordova" +  " = " + deviceCordova, null, "Alert title", "Button label");
-		
-		//var devicePlatform = device.platform;
-		//app.showAlert("devicePlatform" +  " = " + devicePlatform, null, "Alert title", "Button label");
-		
-		//var deviceUUID = device.uuid;
-		//app.showAlert("deviceUUID" +  " = " + deviceUUID, null, "Alert title", "Button label");
-		
-		//var deviceVersion = device.version;
-		//app.showAlert("deviceVersion" +  " = " + deviceVersion, null, "Alert title", "Button label");
-		
-		//var deviceModel = device.model;
-		//app.showAlert("deviceModel" +  " = " + deviceModel, null, "Alert title", "Button label");
-		
-		/* ***** */
-		
-		// @todo: Set a loop that get's the coordinates every x seconds.
+		// @todo: Set a loop that gets the coordinates every x seconds.
 		
 		navigator.geolocation.getCurrentPosition(app.geolocateSuccess, app.geolocateError);
-		
-		/* ***** */
-		
-		//var screenW = app.getScreenWidth();
-		//app.showAlert("screenW" +  " = " + screenW, null, "Alert title", "Button label");
-		
-		//var screenH = app.getScreenHeight();
-		//app.showAlert("screenH" +  " = " + screenH, null, "Alert title", "Button label");
 		
 		/* ***** */
 
@@ -340,6 +311,7 @@ var app = {
 	globalizationGetPreferredLangSuccess: function(language) {
 		if (language) {
 			var languageValue = language.value;
+			app.showAlert("languageValue" + " = " + languageValue, null, "languageValue", "ok");
 
 			/*if (this.bcp_47) {
 				this.showAlert("Inside the if", null, "this.bcp_47", "ok");
