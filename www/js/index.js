@@ -661,12 +661,22 @@ var app = {
 	/**
 	 *
 	 */
-	PREFERRED_LANGUAGE_ENGLISH: "English",
+	LANGUAGE_ENGLISH: "English",
 
 	/**
 	 *
 	 */
-	PREFERRED_LANGUAGE_SPANISH: "Spanish",
+	LANGUAGE_ENGLISH_CODE: "en",
+
+	/**
+	 *
+	 */
+	LANGUAGE_SPANISH: "Spanish",
+
+	/**
+	 *
+	 */
+	LANGUAGE_SPANISH_CODE: "es",
 
 	/**
 	 *
@@ -722,10 +732,10 @@ var app = {
 		/* ***** */
 
 		// Set the english language.
-		$("#set-pre-lan-eng").val(app.PREFERRED_LANGUAGE_ENGLISH);
+		$("#set-pre-lan-eng").val(app.LANGUAGE_ENGLISH_CODE);
 
 		// Set the spanish language.
-		$("#set-pre-lan-spa").val(app.PREFERRED_LANGUAGE_SPANISH);
+		$("#set-pre-lan-spa").val(app.LANGUAGE_SPANISH_CODE);
 
 		/**
 		 * Default the settings variables.
