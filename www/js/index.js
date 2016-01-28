@@ -732,6 +732,7 @@ var app = {
 		/* ***** */
 
 		var preferredLanguage = app.getPreferredLanguage();
+		app.showAlert("preferredLanguage" + " = " + preferredLanguage, null, "Alert", "ok");
 
 		if (null == preferredLanguage) {
 			// Geolocate based on the current lat and lon
