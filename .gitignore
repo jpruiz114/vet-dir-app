@@ -1,11 +1,8 @@
-# Exclude any PSD/AI source
-*.psd
+# Exclude any AI / PSD source
 *.ai
+*.psd
 
-# Exclude grunt files
-#package.json
-#Gruntfile.js
-
+# Exclude the node modules folder
 node_modules
 
 # IDEA config files
