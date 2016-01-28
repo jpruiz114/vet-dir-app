@@ -8,5 +8,10 @@
 			"pet_store_category_id": "4bf58dd8d48988d100951735",
 			"veterinarian_category_id": "4d954af4a243a5684765b473"
 		}
+	},
+  	"google": {
+		"geocode": {
+			"api_token": "AIzaSyBKkqulIwOh04DdoYd0w3qyhcp9QCpsQxo"
+		}
 	}
 }

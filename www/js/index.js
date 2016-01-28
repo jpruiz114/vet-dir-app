@@ -7,6 +7,11 @@ var app = {
 	/**
 	 *
 	 */
+	google_geocode: null,
+
+	/**
+	 *
+	 */
 	initialize: function() {
 		this.bindEvents();
 	},
@@ -22,11 +27,6 @@ var app = {
 	 *
 	 */
 	onDeviceReady: function() {
-		app.changeView("welcome", 5000, app.welcomeCallback);
-		
-		// @todo: Set a loop that gets the coordinates every x seconds.
-		navigator.geolocation.getCurrentPosition(app.geolocateSuccess, app.geolocateError);
-
 		// Load the app config.
 		app.loadConfig();
 
@@ -35,6 +35,9 @@ var app = {
 
 		// Init the settings view.
 		app.initSettings();
+
+		// Go to the main view.
+		app.changeView("welcome", 4000, app.welcomeCallback);
 	},
 	
 	/* ***** */
@@ -127,6 +130,14 @@ var app = {
 		
 		var veterinarian_category_id = json.foursquare.categories.veterinarian_category_id;
 		app.setFsVeterinarianCategory(veterinarian_category_id);
+
+		if (app.google_geocode) {
+			var google_geocode_api_token = json.google.geocode.api_token;
+
+			app.google_geocode.api_key = google_geocode_api_token;
+		} else {
+			// @todo
+		}
 	},
 	
 	/* ***** */
@@ -219,51 +230,6 @@ var app = {
 	 */
 	getFsVeterinarianCategory: function() {
 		return this.fsVeterinarianCategory;
-	},
-	
-	/* ***** */
-
-	/**
-	 *
-	 * @param position
-	 */
-	geolocateSuccess: function(position) {
-		var lat = position.coords.latitude;
-		//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
-		
-		var lng = position.coords.longitude;
-		//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
-		
-		var alt = position.coords.altitude;
-		//app.showAlert("alt" +  " = " + alt, null, "info", "ok");
-		
-		var acc = position.coords.accuracy;
-		//app.showAlert("acc" +  " = " + acc, null, "info", "ok");
-		
-		var altAcc = position.coords.altitudeAccuracy;
-		//app.showAlert("altAcc" +  " = " + altAcc, null, "info", "ok");
-		
-		var heading = position.coords.heading;
-		//app.showAlert("heading" +  " = " + heading, null, "info", "ok");
-		
-		var speed = position.coords.speed;
-		//app.showAlert("speed" +  " = " + speed, null, "info", "ok");
-		
-		var timestamp = position.timestamp;
-		//app.showAlert("timestamp" +  " = " + timestamp, null, "info", "ok");
-	},
-
-	/**
-	 *
-	 * @param error
-	 */
-	geolocateError: function(error) {
-		var errorCode = error.code;
-		var errorMessage = error.message;
-		
-		var message = "Error code: " + errorCode + ", Error message: " + errorMessage;
-		
-		app.showAlert(message, null, "Error", "ok");
 	},
 	
 	/* ***** */
@@ -694,6 +660,16 @@ var app = {
 
 	/**
 	 *
+	 */
+	PREFERRED_LANGUAGE_ENGLISH: "English",
+
+	/**
+	 *
+	 */
+	PREFERRED_LANGUAGE_SPANISH: "Spanish",
+
+	/**
+	 *
 	 * @param preferredLanguage
 	 */
 	setPreferredLanguage: function(preferredLanguage) {
@@ -755,7 +731,36 @@ var app = {
 
 		/* ***** */
 
+		var preferredLanguage = app.getPreferredLanguage();
 
+		if (null == preferredLanguage) {
+			// Geolocate based on the current lat and lon
+
+			if (app.google_geocode) {
+				navigator.geolocation.getCurrentPosition(
+					function(position) {
+						var lat = position.coords.latitude;
+						//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
+
+						var lng = position.coords.longitude;
+						//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
+
+						var result = app.google_geocode.geocodeLatLon(lat, lng);
+						app.showAlert(result, null, "result", "ok");
+					},
+					function(error) {
+						var errorCode = error.code;
+						var errorMessage = error.message;
+
+						var message = "Error code: " + errorCode + ", Error message: " + errorMessage;
+
+						app.showAlert(message, null, "Error", "ok");
+					}
+				);
+
+				var result = app.google_geocode.geocodeLatLon();
+			}
+		}
 	},
 
 	/* ***** */
@@ -845,10 +850,11 @@ var app = {
 
 			/* ***** */
 
+			// Load the preferred language.
 			var preferredLanguage = app.getPreferredLanguage();
-			//alert("preferredLanguage" + " = " + preferredLanguage);
 
-
+			// Set the preferred language.
+			$("#settings-pre-lan").val(preferredLanguage);
 
 			/* ***** */
 

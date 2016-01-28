@@ -43,7 +43,7 @@ Install weinre:
 Start weinre service like this:
 `weinre --httpPort pppp --boundHost xx.xx.xx.xx`
 
-Add this to the website:
+Add this to the app:
 <script src="http://xx.xx.xx.xx:pppp/target/target-script-min.js#anonymous"></script>
 
 Check connected instances here:
@@ -52,11 +52,9 @@ http://xx.xx.xx.xx:pppp/
 ## Android terminal commands
 
 In order to launch the Android Virtual Device tool:
-
 `android avd`
 
 In order to launch the Android SDK:
-
 `android sdk`
 
 ## Language
@@ -69,4 +67,4 @@ http://schneegans.de/lv/
 
 ## For donations
 
-https://supporter.60devs.com/profile
+https://supporter.60devs.com/
