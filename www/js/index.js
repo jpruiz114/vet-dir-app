@@ -794,7 +794,27 @@ var app = {
 						//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
 
 						var result = app.google_geocode.geocodeLatLon(lat, lng);
-						app.showAlert(result, null, "result", "ok");
+						//app.showAlert(result, null, "result", "ok");
+
+						var jsonResult = JSON.parse(result);
+
+						var resultsBlock = jsonResult.results;
+
+						for(var i in resultsBlock) {
+							var currentResult = resultsBlock[i];
+
+							var formattedAddress = currentResult.formatted_address;
+
+							var types = currentResult.types;
+
+							for (var j in types) {
+								var currentType = types[j];
+
+								if (currentType == "country") {
+									app.showAlert("formattedAddress" + " = " + formattedAddress, null, "result", "ok");
+								}
+							}
+						}
 					},
 					function(error) {
 						var errorCode = error.code;
