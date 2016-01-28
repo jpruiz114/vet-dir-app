@@ -661,17 +661,7 @@ var app = {
 	/**
 	 *
 	 */
-	LANGUAGE_ENGLISH: "English",
-
-	/**
-	 *
-	 */
 	LANGUAGE_ENGLISH_CODE: "en",
-
-	/**
-	 *
-	 */
-	LANGUAGE_SPANISH: "Spanish",
 
 	/**
 	 *
