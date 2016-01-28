@@ -65,7 +65,7 @@ var app = {
 	setViewAsFixed: function(viewName) {
 		if (null != viewName) {
 			if ($("#" + viewName).length) {
-				$("#" + viewName).attr("data-view-fixed", "1");
+				$("#" + viewName).data("view-fixed", 1);
 			} else {
 				// @todo
 			}
