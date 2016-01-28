@@ -229,13 +229,13 @@ var app = {
 	 */
 	geolocateSuccess: function(position) {
 		var lat = position.coords.latitude;
-		app.showAlert("lat" +  " = " + lat, null, "info", "ok");
+		//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
 		
 		var lng = position.coords.longitude;
-		app.showAlert("lng" +  " = " + lng, null, "info", "ok");
+		//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
 		
 		var alt = position.coords.altitude;
-		app.showAlert("alt" +  " = " + alt, null, "info", "ok");
+		//app.showAlert("alt" +  " = " + alt, null, "info", "ok");
 		
 		var acc = position.coords.accuracy;
 		//app.showAlert("acc" +  " = " + acc, null, "info", "ok");
@@ -770,7 +770,13 @@ var app = {
 
 			// Check the data-view-fixed attribute - http://www.w3schools.com/tags/att_global_data.asp
 			var viewFixed = app.viewHasBeenFixed(viewName);
-			app.showAlert("viewFixed" + " = " + viewFixed, null, "Alert", "ok");
+			//app.showAlert("viewFixed" + " = " + viewFixed, null, "Alert", "ok");
+
+			if (viewFixed) {
+				app.showAlert("View header already fixed", null, "Alert", "ok");
+
+				return;
+			}
 
 			// Get the title container.
 			var topBar = $("#" + viewName + " " + ".top-bar");
