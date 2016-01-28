@@ -770,6 +770,7 @@ var app = {
 
 			// Check the data-view-fixed attribute - http://www.w3schools.com/tags/att_global_data.asp
 			var viewFixed = app.viewHasBeenFixed(viewName);
+			app.showAlert("viewFixed" + " = " + viewFixed, null, "Alert", "ok");
 
 			// Get the title container.
 			var topBar = $("#" + viewName + " " + ".top-bar");
