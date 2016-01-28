@@ -7,12 +7,17 @@ var app = {
 	/**
 	 *
 	 */
+	google_geocode: null,
+
+	/**
+	 *
+	 */
 	bcp_47: null,
 
 	/**
 	 *
 	 */
-	google_geocode: null,
+	lang_per_country: null,
 
 	/**
 	 *
@@ -131,6 +136,7 @@ var app = {
 			var google_geocode_api_token = json.google.geocode.api_token;
 			app.google_geocode.api_key = google_geocode_api_token;
 
+			// Pass a reference for the jQuery object.
 			app.google_geocode.$ = $;
 		} else {
 			// @todo
@@ -284,13 +290,13 @@ var app = {
 				if (languageCode) {
 					app.setup_i18n(languageCode);
 				} else {
-					app.setup_i18n("en");
+					app.setup_i18n(app.LANGUAGE_ENGLISH_CODE);
 				}
 			} else {
 				// @todo
 			}
 		} else {
-			app.setup_i18n("en");
+			app.setup_i18n(app.LANGUAGE_ENGLISH_CODE);
 		}
 	},
 
@@ -298,7 +304,7 @@ var app = {
 	 *
 	 */
 	globalizationGetPreferredLangError: function() {
-		app.setup_i18n("en");
+		app.setup_i18n(app.LANGUAGE_ENGLISH_CODE);
 	},
 	
 	/**
@@ -306,10 +312,10 @@ var app = {
 	 */
 	setup_i18n: function(language) {
 		if (null == language) {
-			language = "en";
+			language = app.LANGUAGE_ENGLISH_CODE;
 		}
 
-		app.setupPreferredLanguage(language);
+		app.setPreferredLanguage(language);
 
 		var options = {lng: language, resGetPath: "locales/__lng__/__ns__.json"};
 
@@ -718,22 +724,6 @@ var app = {
 		return localStorage.getItem("vet_dir_setting_preferred_language");
 	},
 
-	/**
-	 *
-	 * @param preferredLanguage
-	 */
-	setupPreferredLanguage: function(preferredLanguage) {
-		if (preferredLanguage) {
-			var currentPreferredLanguage = app.getPreferredLanguage();
-
-			if (null == currentPreferredLanguage) {
-				app.setPreferredLanguage(preferredLanguage);
-			}
-		} else {
-			// @todo
-		}
-	},
-
 	/* ***** */
 
 	/**
@@ -758,7 +748,7 @@ var app = {
 		/* ***** */
 
 		var preferredLanguage = app.getPreferredLanguage();
-		app.showAlert("preferredLanguage" + " = " + preferredLanguage, null, "Alert", "ok");
+		//app.showAlert("preferredLanguage" + " = " + preferredLanguage, null, "Alert", "ok");
 
 		if (null == preferredLanguage) {
 			// Geolocate based on the current lat and lon
@@ -778,7 +768,9 @@ var app = {
 						var jsonResult = JSON.parse(result);
 
 						var resultsBlock = jsonResult.results;
-						app.showAlert(resultsBlock, null, "resultsBlock", "ok");
+						//app.showAlert(resultsBlock, null, "resultsBlock", "ok");
+
+						var country = null;
 
 						for(var i in resultsBlock) {
 							var currentResult = resultsBlock[i];
@@ -791,12 +783,44 @@ var app = {
 								var currentType = types[j];
 
 								if (currentType == "country") {
-									app.showAlert("formattedAddress" + " = " + formattedAddress, null, "result", "ok");
+									//app.showAlert("formattedAddress" + " = " + formattedAddress, null, "result", "ok");
+
+									country = formattedAddress;
+
+									break;
 								}
+							}
+
+							if (country) {
+								break;
 							}
 						}
 
-						// @todo: At some point here, call callback.
+						if (country) {
+							if (app.lang_per_country) {
+								preferredLanguage = app.lang_per_country.getLanguagePerCountry(country);
+
+								if (!preferredLanguage) {
+									// If no preferred language was found, then use english as default.
+									preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
+								}
+							} else {
+								// @todo
+							}
+						} else {
+							// If no country was found, then use english as default.
+							preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
+						}
+
+						/* ***** */
+
+						app.setPreferredLanguage(preferredLanguage);
+
+						/* ***** */
+
+						if (callback) {
+							callback();
+						}
 					},
 					function(error) {
 						var errorCode = error.code;
@@ -805,9 +829,28 @@ var app = {
 						var message = "Error code: " + errorCode + ", Error message: " + errorMessage;
 
 						app.showAlert(message, null, "Error", "ok");
+
+						/* ***** */
+
+						preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
+						app.setPreferredLanguage(preferredLanguage);
+
+						/* ***** */
+
+						if (callback) {
+							callback();
+						}
 					}
 				);
+			} else {
+				// @todo
 			}
+		}
+
+		/* ***** */
+
+		if (callback) {
+			callback();
 		}
 	},
 

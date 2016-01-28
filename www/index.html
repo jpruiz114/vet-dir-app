@@ -204,9 +204,11 @@
 		<!-- http://i18next.com/pages/doc_init.html -->
 		<script type="text/javascript" src="js/i18next-1.11.0.min.js"></script>
 
+		<script type="text/javascript" src="js/modules/google/geocode.js"></script>
+
 		<script type="text/javascript" src="js/modules/bcp_47.js"></script>
 
-		<script type="text/javascript" src="js/modules/google/geocode.js"></script>
+		<script type="text/javascript" src="js/modules/lang_per_country.js"></script>
 
 		<script type="text/javascript" src="js/index.js"></script>
 		
@@ -220,9 +222,11 @@
 
 					localStorage.clear();
 
+					app.google_geocode = google_geocode;
+
 					app.bcp_47 = bcp_47;
 
-					app.google_geocode = google_geocode;
+					app.lang_per_country = lang_per_country;
 
 					app.initialize();
 				}
