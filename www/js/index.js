@@ -757,18 +757,14 @@ var app = {
 				navigator.geolocation.getCurrentPosition(
 					function(position) {
 						var lat = position.coords.latitude;
-						//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
 
 						var lng = position.coords.longitude;
-						//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
 
 						var result = app.google_geocode.geocodeLatLon(lat, lng);
-						//app.showAlert(result, null, "result", "ok");
 
 						var jsonResult = JSON.parse(result);
 
 						var resultsBlock = jsonResult.results;
-						//app.showAlert(resultsBlock, null, "resultsBlock", "ok");
 
 						var country = null;
 
@@ -845,12 +841,15 @@ var app = {
 			} else {
 				// @todo
 			}
-		}
+		} else {
+			preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
+			app.setPreferredLanguage(preferredLanguage);
 
-		/* ***** */
+			/* ***** */
 
-		if (callback) {
-			callback();
+			if (callback) {
+				callback();
+			}
 		}
 	},
 
