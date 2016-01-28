@@ -707,13 +707,29 @@ var app = {
 	initSettings: function() {
 		$("#settings-back-link").click(
 			function() {
-				//app.showAlert("settings view back link click", null, "Alert", "ok");
-
 				app.changeView("welcome", 0, null);
 			}
 		);
 
 		/* ***** */
+
+		// Set the kilometer search unit.
+		$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
+
+		// Set the mile search unit.
+		$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
+
+		/* ***** */
+
+		// Set the english language.
+		$("#set-pre-lan-eng").val(app.PREFERRED_LANGUAGE_ENGLISH);
+
+		// Set the spanish language.
+		$("#set-pre-lan-spa").val(app.PREFERRED_LANGUAGE_SPANISH);
+
+		/**
+		 * Default the settings variables.
+		 */
 
 		var preferredUnit = app.getPreferredUnit();
 
@@ -741,10 +757,10 @@ var app = {
 				navigator.geolocation.getCurrentPosition(
 					function(position) {
 						var lat = position.coords.latitude;
-						//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
+						app.showAlert("lat" +  " = " + lat, null, "info", "ok");
 
 						var lng = position.coords.longitude;
-						//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
+						app.showAlert("lng" +  " = " + lng, null, "info", "ok");
 
 						var result = app.google_geocode.geocodeLatLon(lat, lng);
 						app.showAlert(result, null, "result", "ok");
@@ -835,14 +851,6 @@ var app = {
 
 			/* ***** */
 
-			// Set the kilometer search unit.
-			$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
-
-			// Set the mile search unit.
-			$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
-
-			/* ***** */
-
 			// Load the preferred unit.
 			var preferredUnit = app.getPreferredUnit();
 
@@ -856,10 +864,6 @@ var app = {
 
 			// Set the preferred language.
 			$("#settings-pre-lan").val(preferredLanguage);
-
-			/* ***** */
-
-			app.setViewAsFixed(viewName);
 		} else {
 			// @todo
 		}

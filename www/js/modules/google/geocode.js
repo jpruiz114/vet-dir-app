@@ -22,21 +22,9 @@ var google_geocode = {
             url += "&";
             url += "key" + "=" + this.api_key;
 
-            var request = new XMLHttpRequest();
+            return url;
+        } else {
 
-            request.open("GET", url, true);
-
-            request.onreadystatechange = function() {
-                if (request.readyState == 4) {
-                    if(request.status == 200) {
-                        var result = JSON.parse(request.responseText);
-
-                        return result;
-                    }
-                }
-            };
-
-            request.send(null);
         }
     }
 };
