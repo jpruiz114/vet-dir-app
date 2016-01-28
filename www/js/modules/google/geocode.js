@@ -1,12 +1,17 @@
 /**
  *
- * @type {{api_key: null, geocodeLatLon: Function}}
+ * @type {{api_key: null, $: null, geocodeLatLon: Function}}
  */
 var google_geocode = {
     /**
      *
      */
     api_key: null,
+
+    /**
+     *
+     */
+    $: null,
 
     /**
      *
@@ -22,9 +27,13 @@ var google_geocode = {
             url += "&";
             url += "key" + "=" + this.api_key;
 
-            return url;
+            if (this.$) {
+                return $.ajax({type: "GET", url: url, async: false}).responseText;
+            } else {
+                // @todo
+            }
         } else {
-
+            // @todo
         }
     }
 };

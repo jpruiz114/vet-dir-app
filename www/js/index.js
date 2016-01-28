@@ -135,6 +135,8 @@ var app = {
 			var google_geocode_api_token = json.google.geocode.api_token;
 
 			app.google_geocode.api_key = google_geocode_api_token;
+
+			app.google_geocode.$ = $;
 		} else {
 			// @todo
 		}
@@ -757,10 +759,10 @@ var app = {
 				navigator.geolocation.getCurrentPosition(
 					function(position) {
 						var lat = position.coords.latitude;
-						app.showAlert("lat" +  " = " + lat, null, "info", "ok");
+						//app.showAlert("lat" +  " = " + lat, null, "info", "ok");
 
 						var lng = position.coords.longitude;
-						app.showAlert("lng" +  " = " + lng, null, "info", "ok");
+						//app.showAlert("lng" +  " = " + lng, null, "info", "ok");
 
 						var result = app.google_geocode.geocodeLatLon(lat, lng);
 						app.showAlert(result, null, "result", "ok");
@@ -795,7 +797,7 @@ var app = {
 			//app.showAlert("viewFixed" + " = " + viewFixed, null, "Alert", "ok");
 
 			if (viewFixed) {
-				app.showAlert("View header already fixed", null, "Alert", "ok");
+				//app.showAlert("View header already fixed", null, "Alert", "ok");
 
 				return;
 			}
