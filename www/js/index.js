@@ -2,6 +2,11 @@ var app = {
 	/**
 	 *
 	 */
+	appJustLoaded: 1,
+
+	/**
+	 *
+	 */
 	bcp_47: null,
 
 	/**
@@ -29,15 +34,6 @@ var app = {
 	onDeviceReady: function() {
 		// Load the app config.
 		app.loadConfig();
-
-		// Load the language.
-		app.initLangFeature();
-
-		// Init the settings view.
-		app.initSettings();
-
-		// Go to the main view.
-		app.changeView("welcome", 4000, app.welcomeCallback);
 	},
 	
 	/* ***** */
@@ -133,13 +129,15 @@ var app = {
 
 		if (app.google_geocode) {
 			var google_geocode_api_token = json.google.geocode.api_token;
-
 			app.google_geocode.api_key = google_geocode_api_token;
 
 			app.google_geocode.$ = $;
 		} else {
 			// @todo
 		}
+
+		// Load the language.
+		app.initLangFeature();
 	},
 	
 	/* ***** */
@@ -320,16 +318,47 @@ var app = {
 	 * @param t
 	 */
 	callback_i18n: function(err, t) {
+		// i18n the welcome view.
 		$("#welcome").i18n();
 
+		// i18n the settings view.
 		$("#settings").i18n();
 
 		// Save the text object for later usage.
 		app.setTextObject(t);
-		
-		var appName = t("app.name");
+
+		//var appName = t("app.name");
+
+		/* ***** */
+
+		if (app.appJustLoaded) {
+			app.appJustLoaded = 0;
+
+			app.initializeViews(
+				function() {
+					// Go to the main view.
+					app.changeView("welcome", 4000, app.welcomeCallback);
+				}
+			)
+		}
 	},
 	
+	/* ***** */
+
+	/**
+	 *
+	 * @param callback
+	 */
+	initializeViews: function(callback) {
+		// Init the settings view.
+		app.initSettings();
+
+		// If a callback function was provided, call it.
+		if (callback) {
+			callback();
+		}
+	},
+
 	/* ***** */
 
 	/**
