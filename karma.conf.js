@@ -6,7 +6,7 @@ module.exports = function(config) {
         browsers: ["PhantomJS"],
         colors: true,
         files: [
-            "www/js/index.js", /* The file with the widget logic */
+            "www/js/index.js", /* The file with the app logic */
             "test/*.test.js" /* The file with the tests */
         ],
         frameworks: ["chai", "mocha"],
