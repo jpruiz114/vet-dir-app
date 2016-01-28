@@ -4,7 +4,7 @@
 	},
 	"app-messages": {
 		"no-network-connection-msg-title": "No network connection",
-		"no-network-connection-msg-txt": "Mobile data is disabled. Connect to Wi-Fi network instead, or enable mobile data and try again",
+		"no-network-connection-msg-txt": "Mobile data is disabled. Connect to Wi-Fi network instead, or enable mobile data and try again.",
 		"no-network-connection-msg-btn": "OK"
 	},
 	"welcome-nav": {
@@ -40,6 +40,9 @@
 
 	  "preferred-language": "Preferred Language",
 
-	  "save": "Save"
+	  "save": "Save",
+
+	  "language-english": "English",
+	  "language-spanish": "Spanish"
 	}
 }

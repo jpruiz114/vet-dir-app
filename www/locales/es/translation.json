@@ -1,0 +1,48 @@
+{
+	"app": {
+		"name": "VetDir"
+	},
+	"app-messages": {
+		"no-network-connection-msg-title": "Sin conexión a la red",
+		"no-network-connection-msg-txt": "Los datos móviles están desactivados. Conéctese a una red wi-fi, o active los datos móviles e intente nuevamente.",
+		"no-network-connection-msg-btn": "Aceptar"
+	},
+	"welcome-nav": {
+		"title": "VetDir",
+		
+		"intro-text": "Agregar nuevo sitio",
+		"intro-text-desc": "Toque aquí para agregar un nuevo sitio",
+		
+		"pet-service": "Servicio para mascotas",
+		"pet-service-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"pet-store": "Productos para mascotas",
+		"pet-store-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"veterinarian": "Veterinarios",
+		"veterinarian-desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+		
+		"settings": "Configuración",
+		
+		"join-login": "Crear cuenta | Autenticarse",
+		
+		"contact": "Contacto"
+	},
+	"settings": {
+	  "title": "Configuración",
+
+	  "search-radius": "Radio de búsqueda",
+
+	  "preferred-unit": "Unidades preferidas",
+
+	  "search-unit-kilometers": "Kilómetros",
+	  "search-unit-miles": "Millas",
+
+	  "preferred-language": "Lenguaje preferido",
+
+	  "save": "Guardar",
+
+	  "language-english": "Inglés",
+	  "language-spanish": "Español"
+	}
+}

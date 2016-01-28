@@ -35,8 +35,8 @@ module.exports = function(grunt) {
 			checkConfig: {
 				src: ["www/config.json"]
 			},
-			checkEnUsTranslation: {
-				src: ["www/locales/en-US/translation.json"]
+			checkTranslationFiles: {
+				src: ["www/locales/*/*.json"]
 			}
 		},
 		sass: {

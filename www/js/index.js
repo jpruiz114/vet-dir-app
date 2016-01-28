@@ -800,7 +800,7 @@ var app = {
 	 * Function that goes to the settings view.
 	 */
 	goToSettings: function() {
-		app.changeView("settings", 1000, app.goToSettingsCallback);
+		app.changeView("settings", 0, app.goToSettingsCallback);
 	},
 
 	/**
