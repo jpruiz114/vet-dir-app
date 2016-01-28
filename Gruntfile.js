@@ -20,14 +20,24 @@ module.exports = function(grunt) {
 			}
 		},
 		jsvalidate: {
-			options:{
+			options: {
 				globals: {},
 				esprimaOptions: {},
 				verbose: true
 			},
-			targetName:{
-				files:{
-					src:["www/js/index.js", "www/js/modules/*.js"]
+			index: {
+				files: {
+					src: ["www/js/index.js"]
+				}
+			},
+			bcp_47: {
+				files: {
+					src: ["www/js/modules/bcp_47.js"]
+				}
+			},
+			google: {
+				files: {
+					src: ["www/js/modules/google/geocode.js"]
 				}
 			}
 		},
