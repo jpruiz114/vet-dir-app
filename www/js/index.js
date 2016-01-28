@@ -799,6 +799,7 @@ var app = {
 						var jsonResult = JSON.parse(result);
 
 						var resultsBlock = jsonResult.results;
+						app.showAlert(resultsBlock, null, "resultsBlock", "ok");
 
 						for(var i in resultsBlock) {
 							var currentResult = resultsBlock[i];
