@@ -136,8 +136,12 @@ var app = {
 			// @todo
 		}
 
-		// Load the language.
-		app.initLangFeature();
+		app.defaultVariables(
+			function() {
+				// Load the language.
+				app.initLangFeature();
+			}
+		);
 	},
 	
 	/* ***** */
@@ -351,7 +355,7 @@ var app = {
 	 */
 	initializeViews: function(callback) {
 		// Init the settings view.
-		app.initSettings();
+		app.initSettingsView();
 
 		// If a callback function was provided, call it.
 		if (callback) {
@@ -734,34 +738,9 @@ var app = {
 
 	/**
 	 *
+	 * @param callback
 	 */
-	initSettings: function() {
-		$("#settings-back-link").click(
-			function() {
-				app.changeView("welcome", 0, null);
-			}
-		);
-
-		/* ***** */
-
-		// Set the kilometer search unit.
-		$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
-
-		// Set the mile search unit.
-		$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
-
-		/* ***** */
-
-		// Set the english language.
-		$("#set-pre-lan-eng").val(app.LANGUAGE_ENGLISH_CODE);
-
-		// Set the spanish language.
-		$("#set-pre-lan-spa").val(app.LANGUAGE_SPANISH_CODE);
-
-		/**
-		 * Default the settings variables.
-		 */
-
+	defaultVariables: function(callback) {
 		var preferredUnit = app.getPreferredUnit();
 
 		if (null == preferredUnit) {
@@ -816,6 +795,8 @@ var app = {
 								}
 							}
 						}
+
+						// @todo: At some point here, call callback.
 					},
 					function(error) {
 						var errorCode = error.code;
@@ -826,10 +807,37 @@ var app = {
 						app.showAlert(message, null, "Error", "ok");
 					}
 				);
-
-				var result = app.google_geocode.geocodeLatLon();
 			}
 		}
+	},
+
+	/* ***** */
+
+	/**
+	 *
+	 */
+	initSettingsView: function() {
+		$("#settings-back-link").click(
+			function() {
+				app.changeView("welcome", 0, null);
+			}
+		);
+
+		/* ***** */
+
+		// Set the kilometer search unit.
+		$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
+
+		// Set the mile search unit.
+		$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
+
+		/* ***** */
+
+		// Set the english language.
+		$("#set-pre-lan-eng").val(app.LANGUAGE_ENGLISH_CODE);
+
+		// Set the spanish language.
+		$("#set-pre-lan-spa").val(app.LANGUAGE_SPANISH_CODE);
 	},
 
 	/* ***** */
