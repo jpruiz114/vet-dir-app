@@ -1,8 +1,9 @@
-/**
- *
- * @type {{SPANISH_LANGUAGE_CODE: string, COUNTRY_NAME_COLOMBIA: string, getLanguagePerCountry: Function}}
- */
-lang_per_country = {
+var lang_per_country = {
+    /**
+     *
+     */
+    ENGLISH_LANGUAGE_CODE: "en",
+
     /**
      *
      */
@@ -30,3 +31,4 @@ lang_per_country = {
         return language;
     }
 };
+z

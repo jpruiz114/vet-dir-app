@@ -1,7 +1,3 @@
-/**
- *
- * @type {{regex: RegExp, parse: Function}}
- */
 var bcp_47 = {
     /**
      *

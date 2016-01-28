@@ -1,7 +1,3 @@
-/**
- *
- * @type {{api_key: null, $: null, geocodeLatLon: Function}}
- */
 var google_geocode = {
     /**
      *

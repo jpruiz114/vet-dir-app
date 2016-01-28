@@ -30,14 +30,24 @@ module.exports = function(grunt) {
 					src: ["www/js/index.js"]
 				}
 			},
+			google: {
+				files: {
+					src: ["www/js/modules/google/geocode.js"]
+				}
+			},
 			bcp_47: {
 				files: {
 					src: ["www/js/modules/bcp_47.js"]
 				}
 			},
-			google: {
+			lang_per_country: {
 				files: {
-					src: ["www/js/modules/google/geocode.js"]
+					src: ["www/js/modules/lang_per_country.js"]
+				}
+			},
+			tests: {
+				files: {
+					src: ["test/*.js"]
 				}
 			}
 		},

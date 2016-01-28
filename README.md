@@ -35,6 +35,65 @@ A PHP based API is consumed by this app.
 
 * Notice that the **node_modules** folder was excluded from the repository in the **.gitignore** file.
 
+## Testing
+
+### Karma
+
+:bulb: Install the command line interface for Karma
+`npm install -g karma-cli`
+
+### Dependencies
+
+:bulb: Install the **chai** package
+`npm install chai --save-dev`
+
+:bulb: Install the **grunt-karma** package
+`npm install grunt-karma --save-dev`
+
+:bulb: Install the **karma** package
+`npm install karma --save-dev`
+
+:bulb: Install the **karma-chai** package
+`npm install karma-chai --save-dev`
+
+:bulb: Install the **karma-firefox-launcher** package
+`npm install karma-firefox-launcher --save-dev`
+
+:bulb: Install the **karma-mocha** package
+`npm install karma-mocha --save-dev`
+
+:bulb: Install the **karma-phantomjs-launcher** package
+`npm install karma-phantomjs-launcher --save-dev`
+
+:bulb: Install the **karma-sinon** package
+`npm install karma-sinon --save-dev`
+
+:bulb: Install the **karma-verbose-reporter** package
+`npm install karma-verbose-reporter --save-dev`
+
+:bulb: Install the **mocha** package
+`npm install mocha --save-dev`
+
+:bulb: Install the **phantomjs** package
+`npm install phantomjs --save-dev`
+
+:bulb: Install the **sinon** package
+`npm install sinon --save-dev`
+
+To check that Karma is installed:
+
+`karma --version`
+
+To init Karma:
+
+`karma init`
+
+That should create the karma.conf.js Setup the config file. Then write a test.
+
+To run Karma:
+
+`karma start`
+
 ## Notes about mobile devices debug with weinre:
 
 Install weinre:
