@@ -144,7 +144,7 @@ var app = {
 
 		//
 
-		app.showAlert("cordova.plugins.instabug" +  " = " + cordova.plugins.instabug, null, "info", "ok");
+		
 
 		//
 
