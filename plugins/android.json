@@ -38,7 +38,14 @@
         },
         "cordova-plugin-geolocation": {
             "PACKAGE_NAME": "com.phonegap.vetdir"
+        },
+        "com.wodify.cordova.plugin.instabug": {
+            "PACKAGE_NAME": "com.phonegap.vetdir"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "me.tonny.cordova.plugins.multidex": {
+            "PACKAGE_NAME": "com.phonegap.vetdir"
+        }
+    }
 }
