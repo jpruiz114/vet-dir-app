@@ -44,5 +44,8 @@
 
 	  "language-english": "Inglés",
 	  "language-spanish": "Español"
+	},
+	"result-list": {
+		"title": "Resultados {VENUE_CATEGORY}"
 	}
 }

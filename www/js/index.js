@@ -142,12 +142,6 @@ var app = {
 			// @todo
 		}
 
-		//
-
-
-
-		//
-
 		app.defaultVariables(
 			function() {
 				// Load the language.
