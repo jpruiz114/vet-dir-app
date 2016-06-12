@@ -631,7 +631,7 @@ var app = {
 	/* ***** */
 
 	/**
-	 * 
+	 *
 	 * @param data
 	 */
 	goToResultList: function(data) {
