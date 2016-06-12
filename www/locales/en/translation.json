@@ -7,7 +7,7 @@
 		"no-network-connection-msg-txt": "Mobile data is disabled. Connect to Wi-Fi network instead, or enable mobile data and try again.",
 		"no-network-connection-msg-btn": "OK"
 	},
-	"welcome-nav": {
+	"welcome__nav": {
 		"title": "VetDir",
 		
 		"intro-text": "Add new venue",

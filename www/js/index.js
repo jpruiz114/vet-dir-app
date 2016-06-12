@@ -363,6 +363,9 @@ var app = {
 		// Init the settings view.
 		app.initSettingsView();
 
+		// Init the result list view.
+		app.initResultListView();
+
 		// If a callback function was provided, call it.
 		if (callback) {
 			callback();
@@ -586,14 +589,7 @@ var app = {
 										if (data.length == 0) {
 											app.showAlert("No data found", null, "info", "ok");
 										} else {
-											for (var i in data) {
-												var currentVenue = data[i];
-
-												var distance = currentVenue.distance;
-												app.showAlert("distance" +  " = " + distance, null, "info", "ok");
-
-
-											}
+											app.goToResultList(data);
 										}
 									}
 								});
@@ -632,6 +628,33 @@ var app = {
 		}
 	},
 	
+	/* ***** */
+
+	/**
+	 * 
+	 * @param data
+	 */
+	goToResultList: function(data) {
+		for (var i in data) {
+			var currentVenue = data[i];
+
+			var distance = currentVenue.distance;
+			app.showAlert("distance" +  " = " + distance, null, "info", "ok");
+
+
+		}
+
+		app.changeView("result-list", 0, app.goToResultListCallback);
+	},
+
+	/**
+	 *
+	 * @param viewName
+	 */
+	goToResultListCallback: function(viewName) {
+
+	},
+
 	/* ***** */
 
 	/**
@@ -886,6 +909,19 @@ var app = {
 
 	/**
 	 *
+	 */
+	initResultListView: function() {
+		$("#result-list__back-link").click(
+			function() {
+				app.changeView("welcome", 0, null);
+			}
+		);
+	},
+
+	/* ***** */
+
+	/**
+	 *
 	 * @param viewName
 	 */
 	fixViewHeader: function(viewName) {
@@ -910,11 +946,11 @@ var app = {
 
 			var cssHeight = "calc(100% - " + topBarHeight + "px)";
 
-			$("#" + viewName + " " + "#" + viewName + "-nav").css("height", cssHeight);
+			$("#" + viewName + " " + "#" + viewName + "__nav").css("height", cssHeight);
 
-			$("#" + viewName + " " + "#" + viewName + "-nav").css("overflow-y", "scroll");
+			$("#" + viewName + " " + "#" + viewName + "__nav").css("overflow-y", "scroll");
 
-			$("#" + viewName + " " + "#" + viewName + "-nav").css("-webkit-overflow-scrolling", "touch");
+			$("#" + viewName + " " + "#" + viewName + "__nav").css("-webkit-overflow-scrolling", "touch");
 
 			// Fix the icons containers to have their height equal to the title.
 			$("#" + viewName + " " + ".icon-beside-title").css("height", topBarHeight + "px");
