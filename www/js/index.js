@@ -655,7 +655,14 @@ var app = {
 	 * @param viewName
 	 */
 	goToResultListCallback: function(viewName) {
+		if (null != viewName) {
+			// Fix the view header.
+			app.fixViewHeader(viewName);
 
+			
+		} else {
+			// @todo
+		}
 	},
 
 	/* ***** */
