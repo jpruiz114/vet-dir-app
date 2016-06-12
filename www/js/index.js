@@ -659,7 +659,7 @@ var app = {
 			// Fix the view header.
 			app.fixViewHeader(viewName);
 
-			
+
 		} else {
 			// @todo
 		}
