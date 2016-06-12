@@ -334,6 +334,9 @@ var app = {
 		// i18n the settings view.
 		$("#settings").i18n();
 
+		// i18n the result list view.
+		$("#result-list").i18n();
+
 		// Save the text object for later usage.
 		app.setTextObject(t);
 
