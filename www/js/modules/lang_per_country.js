@@ -31,4 +31,3 @@ var lang_per_country = {
         return language;
     }
 };
-z

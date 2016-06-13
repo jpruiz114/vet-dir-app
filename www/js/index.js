@@ -638,13 +638,15 @@ var app = {
 	 * @param data
 	 */
 	goToResultList: function(data) {
+		$("#result-list__nav").empty();
+
 		for (var i in data) {
 			var currentVenue = data[i];
 
 			var distance = currentVenue.distance;
-			app.showAlert("distance" +  " = " + distance, null, "info", "ok");
 
-
+			var detail = currentVenue.detail;
+			app.showAlert(detail, null, "info", "ok");
 		}
 
 		app.changeView("result-list", 0, app.goToResultListCallback);
@@ -667,21 +669,13 @@ var app = {
 
 	/* ***** */
 
-	/**
-	 *
-	 * @returns {Number}
-	 */
-	getScreenWidth: function() {
+	/*getScreenWidth: function() {
 		return screen.width;
-	},
+	},*/
 
-	/**
-	 *
-	 * @returns {Number}
-	 */
-	getScreenHeight: function() {
+	/*getScreenHeight: function() {
 		return screen.height;
-	},
+	},*/
 	
 	/* ***** */
 
