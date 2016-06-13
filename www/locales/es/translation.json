@@ -7,7 +7,7 @@
 		"no-network-connection-msg-txt": "Los datos móviles están desactivados. Conéctese a una red wi-fi, o active los datos móviles e intente nuevamente.",
 		"no-network-connection-msg-btn": "Aceptar"
 	},
-	"welcome__nav": {
+	"welcome": {
 		"title": "VetDir",
 		
 		"intro-text": "Agregar nuevo sitio",
