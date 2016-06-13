@@ -37,6 +37,8 @@ var app = {
 	 *
 	 */
 	onDeviceReady: function() {
+		document.addEventListener("backbutton", app.goBackButtonHandler, true);
+
 		// Load the app config.
 		app.loadConfig();
 	},
@@ -635,6 +637,15 @@ var app = {
 
 	/**
 	 *
+	 */
+	goBackButtonHandler: function() {
+		app.showAlert("goBackButtonHandler", null, "info", "ok");
+	},
+
+	/* ***** */
+
+	/**
+	 *
 	 * @param data
 	 */
 	goToResultList: function(data) {
@@ -646,7 +657,15 @@ var app = {
 			var distance = currentVenue.distance;
 
 			var detail = currentVenue.detail;
-			app.showAlert(detail, null, "info", "ok");
+
+			// entityId
+			// name
+			// contactPhone
+			// locationAddress
+			// lat
+			// lng
+
+
 		}
 
 		app.changeView("result-list", 0, app.goToResultListCallback);
