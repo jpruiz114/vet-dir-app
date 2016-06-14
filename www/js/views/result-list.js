@@ -17,6 +17,28 @@ var resultList = {
 
     /**
      *
+     * @param index
+     * @param entityId
+     * @param name
+     * @param distance
+     * @returns {string}
+     */
+    getHTML_Block: function(index, entityId, name, distance) {
+        var html = "";
+
+        if (resultList.app.getPreferredUnit() == resultList.app.KILOMETER_SEARCH_UNIT) {
+            resultList.app.showAlert("Km", null, "info", "ok");
+        }
+
+        if (resultList.app.getPreferredUnit() == resultList.app.MILE_SEARCH_UNIT) {
+            resultList.app.showAlert("Mi", null, "info", "ok");
+        }
+
+        return html;
+    },
+
+    /**
+     *
      * @param data
      */
     goToResultList: function(data) {
@@ -27,8 +49,6 @@ var resultList = {
 
             var distance = currentVenue.distance;
 
-            var detail = currentVenue.detail;
-
             // entityId
             // name
             // contactPhone
@@ -36,7 +56,14 @@ var resultList = {
             // lat
             // lng
 
+            var detail = currentVenue.detail;
 
+            var entityId = detail["entityId"];
+            var name = detail["name"];
+
+            var html = resultList.getHTML_Block(i, entityId, name, distance);
+
+            $("#result-list__nav").append(html);
         }
 
         app.changeView("result-list", 0, resultList.goToResultListCallback);
