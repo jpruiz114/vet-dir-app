@@ -1,4 +1,7 @@
 var resultList = {
+    /**
+     *
+     */
     app: null,
 
     /**

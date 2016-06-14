@@ -27,6 +27,11 @@ var app = {
 	/**
 	 *
 	 */
+	settings: null,
+
+	/**
+	 *
+	 */
 	initialize: function() {
 		this.bindEvents();
 	},
@@ -84,8 +89,6 @@ var app = {
 			// @todo
 		}
 	},
-	
-	/* ***** */
 	
 	/* ***** */
 
