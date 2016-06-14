@@ -45,6 +45,11 @@ module.exports = function(grunt) {
 					src: ["www/js/modules/lang_per_country.js"]
 				}
 			},
+			views: {
+				files: {
+					src: ["www/js/views/*.js"]
+				}
+			},
 			tests: {
 				files: {
 					src: ["test/*.js"]

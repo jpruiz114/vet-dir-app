@@ -259,7 +259,7 @@ var app = {
 	 */
 	initLangFeature: function() {
 		// Get the preferred language from the local storage.
-		var preferredLanguage = app.getPreferredLanguage();
+		var preferredLanguage = app.getPrefLang();
 
 		if (preferredLanguage) {
 			app.setup_i18n(preferredLanguage);
@@ -271,7 +271,7 @@ var app = {
 				 * If there is an error getting the language, then the errorCallback executes with a GlobalizationError object as a parameter.
 				 * The error's expected code is GlobalizationError.UNKNOWN_ERROR.
 				 */
-				navigator.globalization.getPreferredLanguage(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
+				navigator.globalization.getPrefLang(app.globalizationGetPreferredLangSuccess, app.globalizationGetPreferredLangError);
 			} else {
 				app.showAlert("navigator.globalization is undefined", null, "Alert", "ok");
 			}
@@ -325,7 +325,7 @@ var app = {
 			language = app.LANGUAGE_ENGLISH_CODE;
 		}
 
-		app.setPreferredLanguage(language);
+		app.setPrefLang(language);
 
 		var options = {lng: language, resGetPath: "locales/__lng__/__ns__.json"};
 
@@ -374,7 +374,7 @@ var app = {
 	 */
 	initializeViews: function(callback) {
 		// Init the settings view.
-		app.initSettingsView();
+		app.settings.initSettingsView();
 
 		// Init the result list view.
 		app.resultList.initResultListView();
@@ -723,14 +723,14 @@ var app = {
 	 *
 	 * @param preferredLanguage
 	 */
-	setPreferredLanguage: function(preferredLanguage) {
+	setPrefLang: function(preferredLanguage) {
 		localStorage.setItem("vet_dir_setting_preferred_language", preferredLanguage);
 	},
 
 	/**
 	 *
 	 */
-	getPreferredLanguage: function() {
+	getPrefLang: function() {
 		return localStorage.getItem("vet_dir_setting_preferred_language");
 	},
 
@@ -757,7 +757,7 @@ var app = {
 
 		/* ***** */
 
-		var preferredLanguage = app.getPreferredLanguage();
+		var preferredLanguage = app.getPrefLang();
 		//app.showAlert("preferredLanguage" + " = " + preferredLanguage, null, "Alert", "ok");
 
 		if (null == preferredLanguage) {
@@ -820,7 +820,7 @@ var app = {
 
 						/* ***** */
 
-						app.setPreferredLanguage(preferredLanguage);
+						app.setPrefLang(preferredLanguage);
 
 						/* ***** */
 
@@ -839,7 +839,7 @@ var app = {
 						/* ***** */
 
 						preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
-						app.setPreferredLanguage(preferredLanguage);
+						app.setPrefLang(preferredLanguage);
 
 						/* ***** */
 
@@ -853,7 +853,7 @@ var app = {
 			}
 		} else {
 			preferredLanguage = app.LANGUAGE_ENGLISH_CODE;
-			app.setPreferredLanguage(preferredLanguage);
+			app.setPrefLang(preferredLanguage);
 
 			/* ***** */
 
@@ -861,35 +861,6 @@ var app = {
 				callback();
 			}
 		}
-	},
-
-	/* ***** */
-
-	/**
-	 *
-	 */
-	initSettingsView: function() {
-		$("#settings-back-link").click(
-			function() {
-				app.changeView("welcome", 0, null);
-			}
-		);
-
-		/* ***** */
-
-		// Set the kilometer search unit.
-		$("#set-pre-sea-uni-kil").val(app.KILOMETER_SEARCH_UNIT);
-
-		// Set the mile search unit.
-		$("#set-pre-sea-uni-mil").val(app.MILE_SEARCH_UNIT);
-
-		/* ***** */
-
-		// Set the english language.
-		$("#set-pre-lan-eng").val(app.LANGUAGE_ENGLISH_CODE);
-
-		// Set the spanish language.
-		$("#set-pre-lan-spa").val(app.LANGUAGE_SPANISH_CODE);
 	},
 
 	/* ***** */
@@ -930,52 +901,6 @@ var app = {
 			$("#" + viewName + " " + ".icon-beside-title").css("height", topBarHeight + "px");
 
 			app.setViewAsFixed(viewName);
-		} else {
-			// @todo
-		}
-	},
-
-	/* ***** */
-
-	/**
-	 * Function that goes to the settings view.
-	 */
-	goToSettings: function() {
-		app.changeView("settings", 0, app.goToSettingsCallback);
-	},
-
-	/**
-	 *
-	 * @param viewName
-	 */
-	goToSettingsCallback: function(viewName) {
-		if (null != viewName) {
-			// Fix the view header.
-			app.fixViewHeader(viewName);
-
-			/* ***** */
-
-			// Load the preferred search radius.
-			var preferredSearchRadius = app.getPreferredSearchRadius();
-
-			// Set the preferred search radius.
-			$("#settings-pre-sea-rad").val(preferredSearchRadius);
-
-			/* ***** */
-
-			// Load the preferred unit.
-			var preferredUnit = app.getPreferredUnit();
-
-			// Set the preferred unit.
-			$("#settings-pre-sea-uni").val(preferredUnit);
-
-			/* ***** */
-
-			// Load the preferred language.
-			var preferredLanguage = app.getPreferredLanguage();
-
-			// Set the preferred language.
-			$("#settings-pre-lan").val(preferredLanguage);
 		} else {
 			// @todo
 		}
