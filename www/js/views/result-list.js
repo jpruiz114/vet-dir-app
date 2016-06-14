@@ -26,6 +26,16 @@ var resultList = {
     getHTML_Block: function(index, entityId, name, distance) {
         var html = "";
 
+        var cssClasses = "";
+
+        if (index == 0) {
+            cssClasses = "full-width-row row-with-top-margin";
+        } else {
+            cssClasses = "full-width-row";
+        }
+
+        html += "<div class='" + cssClasses + "'>";
+
         if (resultList.app.getPreferredUnit() == resultList.app.KILOMETER_SEARCH_UNIT) {
             resultList.app.showAlert("Km", null, "info", "ok");
         }
@@ -33,6 +43,10 @@ var resultList = {
         if (resultList.app.getPreferredUnit() == resultList.app.MILE_SEARCH_UNIT) {
             resultList.app.showAlert("Mi", null, "info", "ok");
         }
+
+        html += "";
+
+        html += "</div>";
 
         return html;
     },
@@ -47,8 +61,6 @@ var resultList = {
         for (var i in data) {
             var currentVenue = data[i];
 
-            var distance = currentVenue.distance;
-
             // entityId
             // name
             // contactPhone
@@ -60,6 +72,8 @@ var resultList = {
 
             var entityId = detail["entityId"];
             var name = detail["name"];
+
+            var distance = currentVenue.distance;
 
             var html = resultList.getHTML_Block(i, entityId, name, distance);
 
