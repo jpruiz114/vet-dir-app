@@ -22,6 +22,11 @@ var app = {
 	/**
 	 *
 	 */
+	resultList: null,
+
+	/**
+	 *
+	 */
 	initialize: function() {
 		this.bindEvents();
 	},
@@ -369,7 +374,7 @@ var app = {
 		app.initSettingsView();
 
 		// Init the result list view.
-		app.initResultListView();
+		app.resultList.initResultListView();
 
 		// If a callback function was provided, call it.
 		if (callback) {
@@ -594,7 +599,7 @@ var app = {
 										if (data.length == 0) {
 											app.showAlert("No data found", null, "info", "ok");
 										} else {
-											app.goToResultList(data);
+											app.resultList.goToResultList(data);
 										}
 									}
 								});
@@ -640,50 +645,6 @@ var app = {
 	 */
 	goBackButtonHandler: function() {
 		app.showAlert("goBackButtonHandler", null, "info", "ok");
-	},
-
-	/* ***** */
-
-	/**
-	 *
-	 * @param data
-	 */
-	goToResultList: function(data) {
-		$("#result-list__nav").empty();
-
-		for (var i in data) {
-			var currentVenue = data[i];
-
-			var distance = currentVenue.distance;
-
-			var detail = currentVenue.detail;
-
-			// entityId
-			// name
-			// contactPhone
-			// locationAddress
-			// lat
-			// lng
-
-
-		}
-
-		app.changeView("result-list", 0, app.goToResultListCallback);
-	},
-
-	/**
-	 *
-	 * @param viewName
-	 */
-	goToResultListCallback: function(viewName) {
-		if (null != viewName) {
-			// Fix the view header.
-			app.fixViewHeader(viewName);
-
-
-		} else {
-			// @todo
-		}
 	},
 
 	/* ***** */
@@ -926,19 +887,6 @@ var app = {
 
 		// Set the spanish language.
 		$("#set-pre-lan-spa").val(app.LANGUAGE_SPANISH_CODE);
-	},
-
-	/* ***** */
-
-	/**
-	 *
-	 */
-	initResultListView: function() {
-		$("#result-list__back-link").click(
-			function() {
-				app.changeView("welcome", 0, null);
-			}
-		);
 	},
 
 	/* ***** */

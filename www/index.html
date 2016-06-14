@@ -220,8 +220,10 @@
 
 		<script type="text/javascript" src="js/modules/lang_per_country.js"></script>
 
+		<script type="text/javascript" src="js/views/result-list.js"></script>
+
 		<script type="text/javascript" src="js/index.js"></script>
-		
+
 		<script type="text/javascript">
 			/**
 			 * When all the website resources (Images, scripts) have been loaded.
@@ -237,6 +239,9 @@
 					app.bcp_47 = bcp_47;
 
 					app.lang_per_country = lang_per_country;
+
+					app.resultList = resultList;
+					app.resultList.app = app;
 
 					app.initialize();
 				}
