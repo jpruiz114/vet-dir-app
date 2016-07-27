@@ -127,3 +127,6 @@ http://schneegans.de/lv/
 ## For donations
 
 https://supporter.60devs.com/
+
+[![Support](https://supporterhq.com/api/b/ecd6772531401b42c1b98278c0b5e1f7)](https://supporterhq.com/give/ecd6772531401b42c1b98278c0b5e1f7)
+
