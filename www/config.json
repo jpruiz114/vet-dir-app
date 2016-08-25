@@ -1,6 +1,6 @@
 {
 	"config": {
-		"api_base_path": "http://jeanpaulruizvallejo.com/proyectos/vetdir/api/"
+		"api_base_path": "http://vet-dir-api.herokuapp.com/"
 	},
 	"foursquare": {
 		"categories": {
