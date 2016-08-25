@@ -581,7 +581,7 @@ var app = {
 
 								var requestURL = "";
 								requestURL += apiBasePath;
-								requestURL += "v1/venues/";
+								requestURL += "api/venues/";
 								requestURL += venueCategory;
 								requestURL += "/params/";
 								requestURL += "lat" + "=" + lat;
